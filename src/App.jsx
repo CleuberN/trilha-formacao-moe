@@ -13,22 +13,38 @@ function App() {
 
       <section className="eixos">
   <div className="eixo-card">
-    <img
-      src="https://via.placeholder.com/400x250"
-      alt="Eixo IVECO"
-    />
-    <h3>IVECO</h3>
+  <img
+    src="/images/iveco-ms23.jpeg"
+    alt="Eixo IVECO"
+  />
+
+  <div className="eixo-info">
+    <h3>IVECO MS-23</h3>
+
+    <p>
+      Eixo traseiro utilizado em veículos pesados IVECO.
+    </p>
+
     <button>Iniciar Treinamento</button>
   </div>
+</div>
 
   <div className="eixo-card">
-    <img
-      src="https://via.placeholder.com/400x250"
-      alt="Eixo DAF"
-    />
-    <h3>DAF</h3>
+  <img
+    src="/images/daf-md.jpeg"
+    alt="Eixo DAF"
+  />
+
+  <div className="eixo-info">
+    <h3>DAF MD</h3>
+
+    <p>
+      Conjunto de eixo DAF utilizado na linha de montagem.
+    </p>
+
     <button>Iniciar Treinamento</button>
   </div>
+</div>
 </section>
 
       <section className="progresso">
