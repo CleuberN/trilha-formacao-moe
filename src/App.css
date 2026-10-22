@@ -147,3 +147,45 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
   background: #E5EEF5;
   color: var(--moe-blue);
 }
+
+
+/* Biblioteca da Montagem: seis áreas */
+.assembly-library-preview{background:#fff;border:1px solid #e2e9f0;border-radius:16px;padding:24px}
+.areas-preview-copy{font-size:13px;line-height:1.7;color:#718195;margin:-4px 0 18px}
+.areas-mini-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.areas-mini-grid button{display:flex;align-items:center;gap:11px;text-align:left;border:1px solid #e1e9f0;border-radius:10px;background:#f8fafc;padding:14px;color:#24445e}
+.areas-mini-grid button:hover{border-color:#ffb45b;background:#fff8ef}
+.areas-mini-grid button span{font-size:22px}
+.areas-mini-grid button strong{font-size:12px}
+.areas-page{padding:24px 0 48px}
+.areas-page>.back-link{margin-bottom:18px}
+.areas-hero{background:linear-gradient(120deg,#123b5d,#1d587c);border-radius:18px;padding:34px;color:white;margin-bottom:24px}
+.areas-hero .eyebrow{color:#ffb85c}
+.areas-hero h1{font-size:clamp(27px,4vw,38px);line-height:1.15;max-width:760px;margin:12px 0}
+.areas-hero p{color:#e0ebf3;line-height:1.8;font-size:14px;max-width:800px;margin:0}
+.areas-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:22px}
+.area-card{display:flex;flex-direction:column;align-items:stretch;gap:12px;min-height:200px;text-align:left;background:#fff;border:1px solid #e1e8ef;border-radius:13px;padding:18px;color:#29445c;cursor:pointer;transition:border-color .15s,transform .15s}
+.area-card:hover{border-color:#ffad45;transform:translateY(-2px)}
+.area-card-active{border:2px solid #ff9b22;padding:17px;background:#fffaf3}
+.area-card-top{display:flex;justify-content:space-between;align-items:center}
+.area-icon{display:grid;place-items:center;width:43px;height:43px;flex-shrink:0;background:#eaf1f6;border-radius:11px;font-size:22px}
+.area-index{font-size:11px;color:#9aa8b5;font-weight:800}
+.area-card strong{font-size:15px;line-height:1.35}
+.area-summary{font-size:12px;line-height:1.65;color:#748496}
+.area-open{display:flex;justify-content:space-between;margin-top:auto;padding-top:8px;color:#245678;font-size:11px;font-weight:800}
+.area-detail{background:#fff;border:1px solid #e1e8ef;border-radius:15px;padding:26px}
+.area-detail-heading{display:flex;align-items:center;gap:15px}
+.area-detail-heading .area-icon{width:54px;height:54px;font-size:26px}
+.area-detail-heading h2{font-size:25px;line-height:1.3;color:#1b3c56;margin:4px 0 7px}
+.area-status{display:inline-block;background:#edf4f8;color:#496b84;border-radius:5px;padding:5px 8px;font-size:10px;font-weight:700}
+.area-intro{font-size:13px;line-height:1.9;color:#5f7284;margin:22px 0}
+.area-topic-list{display:grid;gap:10px}
+.area-topic{display:grid;grid-template-columns:36px minmax(0,1fr);gap:13px;border:1px solid #e7edf2;border-radius:10px;padding:16px}
+.area-topic-number{display:grid;place-items:center;width:32px;height:32px;border-radius:8px;background:#edf3f7;color:#365c77;font-size:11px;font-weight:800}
+.area-topic h3{font-size:14px;color:#23445e;margin:2px 0 7px}
+.area-topic p{font-size:12px;line-height:1.8;color:#6b7d8f;margin:0}
+.area-source-note{margin-top:18px;padding:15px;border-radius:9px;background:#fff8e9;border:1px solid #f2e1b8}
+.area-source-note strong{font-size:12px;color:#805c1e}
+.area-source-note p{font-size:11px;line-height:1.7;color:#846e4b;margin:6px 0 0}
+@media(max-width:850px){.areas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.areas-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.assembly-library-preview{padding:17px}.areas-grid{grid-template-columns:1fr}.area-card{min-height:170px}.areas-hero{padding:25px 21px}.areas-hero h1{font-size:27px}.area-detail{padding:18px}.area-detail-heading h2{font-size:20px}.areas-mini-grid{grid-template-columns:1fr}.areas-mini-grid button{padding:12px}}
