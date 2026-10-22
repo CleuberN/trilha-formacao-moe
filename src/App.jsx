@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import "./App.css";
+import AreasView from "./components/AreasView";
 
 const modules = [
   { id: "moe", icon: "🏭", title: "Conhecendo a MOE", level: "Básico", summary: "Entenda o objetivo da trilha e o fluxo geral de trabalho.", lessons: [
@@ -92,7 +93,7 @@ function App() {
     <main className="app">
       <header className="topbar">
         <button className="brand" onClick={() => setView("home")} aria-label="Voltar ao início">MOE<span>Biblioteca de Formação</span></button>
-        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button onClick={() => setView("library")}>Biblioteca</button></nav>
+        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button className={view === "areas" ? "nav-active" : ""} onClick={() => setView("areas")}>6 áreas</button><button onClick={() => setView("library")}>Biblioteca</button></nav>
       </header>
 
       {view === "home" && <>
@@ -101,6 +102,19 @@ function App() {
           <h1>Aprenda. Pratique. Evolua.</h1>
           <p>Conhecimento organizado para apoiar o aprendizado na montagem de eixos.</p>
           <div className="hero-tags"><span>📘 Aulas didáticas</span><span>⚙️ Conteúdo técnico</span><span>📈 Progresso individual</span></div>
+        </section>
+
+        <section className="section-block assembly-library-preview">
+          <div className="section-heading"><div><span className="eyebrow">BIBLIOTECA DA MONTAGEM</span><h2>Seis áreas de conhecimento</h2></div><button className="primary-btn" onClick={() => setView("areas")}>Explorar as áreas →</button></div>
+          <p className="areas-preview-copy">Organograma, Lean Manufacturing, Programas, Pré-eleição, Estrutura da Montagem e Modelos de Eixos, reunidos em um só lugar.</p>
+          <div className="areas-mini-grid">
+            <button onClick={() => setView("areas")}><span>🧭</span><strong>Organograma</strong></button>
+            <button onClick={() => setView("areas")}><span>♻️</span><strong>Lean Manufacturing</strong></button>
+            <button onClick={() => setView("areas")}><span>🧩</span><strong>Programas</strong></button>
+            <button onClick={() => setView("areas")}><span>📊</span><strong>Pré-eleição</strong></button>
+            <button onClick={() => setView("areas")}><span>🏭</span><strong>Estrutura da Montagem</strong></button>
+            <button onClick={() => setView("areas")}><span>⚙️</span><strong>Modelos de Eixos</strong></button>
+          </div>
         </section>
 
         <section className="section-block">
@@ -124,6 +138,8 @@ function App() {
           <div className="module-grid">{modules.map((m, i) => <button className="module-card" key={m.id} onClick={() => openModule(m.id)}><span className="module-icon">{m.icon}</span><span className="module-number">MÓDULO {String(i + 1).padStart(2, "0")}</span><strong>{m.title}</strong><small>{m.summary}</small><span className="module-link">Abrir módulo <b>↗</b></span></button>)}</div>
         </section>
       </>}
+
+      {view === "areas" && <AreasView onBackHome={() => setView("home")} />}
 
       {(view === "lesson" || view === "library") && <section className="learning-layout">
         <aside className="learning-sidebar">
