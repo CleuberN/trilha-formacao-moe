@@ -7,9 +7,9 @@ export const assemblyAreas = [
     status: "Estrutura inicial",
     intro: "Esta área reunirá o organograma da montagem, funções, responsabilidades e relações de apoio. Os nomes, cargos e vínculos precisam ser conferidos com a versão oficial antes da publicação definitiva.",
     topics: [
-      { title: "Estrutura organizacional", body: "Consultar aqui o organograma oficial vigente da área de Montagem." },
-      { title: "Funções e responsabilidades", body: "Organizar as atribuições por função sem presumir responsabilidades que não estejam descritas na fonte oficial." },
-      { title: "Canais de apoio", body: "Registrar os contatos e os caminhos de escalonamento somente depois da validação pela liderança." }
+      { title: "Estrutura organizacional", body: "A apostila de estudo cita Jorge Silva (Diretor de Operações), Geraldo Rodrigues (Gerente da Montagem), Alessandro T. Shiota (Gerente da Industrialização) e Robert (Supervisor de Manufatura/Montagem). As relações hierárquicas que não estiverem explicitadas devem ser confirmadas com a versão oficial vigente." },
+      { title: "Funções e responsabilidades", body: "A fonte associa Samuel Tigre à MOE/Montagem de Eixos; Kleiton Santos à MOP/Oficina; Alex Cardas à MOD/MDC; e Samuel Guerra à MDX/Montagem de Diferencial e Caixa. Os nomes e vínculos estão reproduzidos como material de estudo e precisam de conferência antes de uso oficial." },
+      { title: "Canais de apoio", body: "A apostila também menciona Edinaldo Luz e os inspetores Jasiel Claro (diurno) e João Vitor (noturno) na Qualidade da Montagem, além da equipe SESMT/HSE da fábrica. Confirmar a estrutura atual e evitar tratar esta transcrição como organograma oficial." }
     ]
   },
   {
@@ -18,9 +18,9 @@ export const assemblyAreas = [
     title: "Lean Manufacturing",
     summary: "Conheça os princípios de melhoria contínua e identificação de desperdícios.",
     status: "Conteúdo introdutório",
-    intro: "Área de apoio para os conceitos Lean citados no material de estudo. A aplicação prática deve respeitar os padrões e as prioridades definidos pela equipe.",
+    intro: "Conforme a apostila Jornada de Aprendizagem CAMIS, Lean Manufacturing busca melhorar o fluxo e reduzir desperdícios, mantendo o foco no valor para o cliente. O objetivo prático descrito é observar o processo e propor melhorias para segurança, qualidade e eficiência.",
     topics: [
-      { title: "Os oito desperdícios", body: "Superprodução, espera, transporte, processamento desnecessário, estoque, movimentação, defeitos e desperdício do potencial das pessoas." },
+      { title: "Os oito desperdícios", body: "A apostila lista: defeitos, espera, transporte, estoque, movimentação, processamento excessivo, superprodução e talentos não utilizados. Observe exemplos no processo e registre oportunidades de melhoria conforme a rotina local." },
       { title: "Melhoria contínua", body: "Registrar problemas observados, buscar a causa com a equipe e acompanhar as ações aprovadas." },
       { title: "Padronização", body: "Manter o trabalho organizado conforme o padrão vigente e sinalizar oportunidades de melhoria sem alterar instruções por conta própria." }
     ]
@@ -31,11 +31,11 @@ export const assemblyAreas = [
     title: "Programas",
     summary: "Centralize os programas, ferramentas e rotinas utilizados na montagem.",
     status: "A validar com as fontes",
-    intro: "O inventário disponível ainda não permite confirmar uma lista completa de programas ou sistemas. Esta área fica preparada para incluir os nomes oficiais, sua finalidade e os responsáveis.",
+    intro: "A apostila de referência para a etapa Programas e Meio Ambiente descreve os 5S e práticas de manutenção preventiva. Ela também menciona Apriso FlexNet para acompanhamento e controle do processo. A grafia e a disponibilidade dos sistemas devem ser confirmadas localmente.",
     topics: [
-      { title: "Catálogo de programas", body: "Adicionar nome oficial, finalidade, acesso autorizado e área responsável após conferência." },
-      { title: "Rotinas de uso", body: "Documentar as rotinas aprovadas e os registros necessários, sem incluir credenciais ou dados restritos." },
-      { title: "Suporte e dúvidas", body: "Incluir o canal de suporte oficial quando essa informação estiver confirmada." }
+      { title: "Catálogo de programas", body: "Apriso FlexNet é descrito no material como sistema de acompanhamento/controle do processo, com comparação entre o planejado e o executado em tempo real. Confirmar nome oficial, versão e utilização atual na unidade." },
+      { title: "Rotinas de uso", body: "5S: Seiri (utilização), Seiton (organização), Seiso (limpeza), Seiketsu (padronização) e Shitsuke (disciplina). Descrever a aplicação conforme o padrão local vigente." },
+      { title: "Suporte e dúvidas", body: "A apostila define MPT como Manutenção Preventiva Total e MPF como Manutenção Preventiva Ferramental. O material também relaciona ARO (Análise de Risco Operacional) e LPT (Liberação do Posto de Trabalho) aos controles antes de iniciar o trabalho. Confirmar os procedimentos locais." }
     ]
   },
   {
@@ -44,11 +44,11 @@ export const assemblyAreas = [
     title: "Pré-eleição",
     summary: "Organize os apontamentos e indicadores mencionados no material de referência.",
     status: "Transcrição preliminar",
-    intro: "O termo “Pré-eleição” foi mantido conforme definido para a biblioteca. Os apontamentos disponíveis mencionam quadro de efetivo, distribuição de habilidades, ocorrências/retrabalho, first-time-right, plano versus realizado, acompanhamento horário, segurança/meio ambiente e 8D. Confirmar a nomenclatura e o uso local antes de tratar este conteúdo como padrão oficial.",
+    intro: "O título “Pré-eleição” foi mantido conforme solicitado. Na apostila Jornada de Aprendizagem CAMIS, a etapa equivalente aparece como “Preleção”. O conteúdo da fonte reúne informações do turno para orientar equipes e acompanhar resultados, desvios, segurança e qualidade. Confirmar a nomenclatura usada localmente.",
     topics: [
       { title: "Quadro de efetivo e habilidades", body: "Consolidar a alocação de pessoas e habilidades conforme o quadro oficial, sem publicar dados pessoais desnecessários." },
-      { title: "Ocorrências, retrabalho e First Time Right", body: "Organizar os registros de ocorrências e retrabalho e o indicador de aprovação na primeira passagem conforme a definição usada pela equipe." },
-      { title: "Plano versus realizado e acompanhamento horário", body: "Apresentar o acompanhamento de produção com a fórmula e as metas definidas pela área. Não tratar automaticamente a razão 68/85 citada nas anotações como OEE oficial." },
+      { title: "Ocorrências, retrabalho e First Time Right", body: "A fonte menciona quadro de ocorrências, gráfico de gestão de retrabalho e acompanhamento diário de retrabalho, incluindo componentes danificados, montagem e problemas de fornecedores. A expressão First Time Right consta em apontamentos anteriores e precisa de definição e padrão de cálculo da equipe." },
+      { title: "Plano versus realizado e acompanhamento horário", body: "A apostila registra um exemplo de meta 85 e realizado 68: atingimento de 80% e diferença de 17 unidades. Também cita carta de controle da produção hora a hora. A própria fonte alerta que atingimento da meta não é, por si só, OEE." },
       { title: "Segurança, meio ambiente e 8D", body: "Reunir os registros aplicáveis e as orientações aprovadas para análise e resolução de problemas." }
     ]
   },
@@ -58,11 +58,11 @@ export const assemblyAreas = [
     title: "Estrutura da Montagem",
     summary: "Mapeie postos, estações e etapas do fluxo de montagem.",
     status: "Mapa preliminar",
-    intro: "As anotações mencionam 18 postos de trabalho e 4 estações, mas a relação entre essas contagens ainda precisa ser confirmada. A lista abaixo é uma referência preliminar, não uma sequência oficial de produção.",
+    intro: "A transcrição menciona 18 postos de trabalho e 4 postos/estações, mas indica que a relação exata precisa ser confirmada. A apostila contém uma sequência numerada de estações 10 a 140 e operações de pintura/monovia. Use-a como registro de estudo, não como instrução oficial de trabalho.",
     topics: [
-      { title: "Postos e estações", body: "Validar a quantidade, a identificação e a relação entre postos e estações com o layout vigente." },
-      { title: "Operações citadas", body: "As anotações citam operações relacionadas à carcaça do diferencial, freio/ABS, cubos/travas, semieixos, teste de vazamento, abastecimento de óleo e inspeção final." },
-      { title: "Subconjuntos e retrabalho", body: "Também são citados pintura, posto de memória, subconjunto de eixo intermediário, montagem de garfo e retrabalho em oficina. Confirmar nomes e posições no fluxo oficial." }
+      { title: "Postos e estações", body: "A fonte menciona 18 postos de trabalho e 4 postos/estações, com ressalva explícita de que a relação exata deve ser confirmada. Validar quantidades e nomenclaturas com o layout vigente." },
+      { title: "Operações citadas", body: "Sequência transcrita: Est. 10 preparação da carcaça; 20 validação/posicionamento do diferencial; 30 fixação do diferencial e montagem do intermediário; 40 freio esquerdo; 50 ABS esquerdo; 60 freio direito; 70 ABS direito; 80 cubo direito; 90 cubo esquerdo; 100 semieixo/freio direito; 110 semieixo/freio esquerdo; 120 teste de estanqueidade; 130 abastecimento de óleo e envio à pintura; 140 inspeção final. Confirmar tudo na instrução vigente antes de usar operacionalmente." },
+      { title: "Subconjuntos e retrabalho", body: "A apostila cita posto de pintura com inspeção visual e registros de temperatura/viscosidade; Monovia 2 para retoques e posicionamento na embalagem PLE; e inspeção final com checklist e registros fotográficos. Outras anotações citam posto de memória, subconjunto de eixo intermediário, montagem de garfo e retrabalho em oficina; validar a nomenclatura e a posição no fluxo." }
     ]
   },
   {
