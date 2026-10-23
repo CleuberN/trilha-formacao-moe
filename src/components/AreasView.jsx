@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { assemblyAreas } from "../data/assemblyAreas";
 
-export default function AreasView({ onBackHome }) {
-  const [activeId, setActiveId] = useState(assemblyAreas[0].id);
+export default function AreasView({ onBackHome, initialAreaId = assemblyAreas[0].id }) {
+  const [activeId, setActiveId] = useState(initialAreaId);
   const activeArea = assemblyAreas.find((area) => area.id === activeId) || assemblyAreas[0];
 
   return (
