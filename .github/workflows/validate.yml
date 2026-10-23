@@ -1,0 +1,33 @@
+name: Validar Biblioteca MOE
+
+on:
+  pull_request:
+    branches: [master]
+  push:
+    branches: [master, "feature/**"]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Build e lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Baixar código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Instalar dependências
+        run: npm ci
+
+      - name: Validar lint
+        run: npm run lint
+
+      - name: Gerar build de produção
+        run: npm run build

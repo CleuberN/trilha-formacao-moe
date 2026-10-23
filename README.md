@@ -1,16 +1,39 @@
-# React + Vite
+# Biblioteca MOE — Trilha de Formação
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Aplicação React + Vite para apoiar o estudo didático da Montagem de Eixos (MOE).
 
-Currently, two official plugins are available:
+## Conteúdo atual
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Trilha de formação com oito módulos de estudo.
+- Referências de estudo para IVECO MS-23 e DAF MD.
+- Biblioteca técnica com alertas de rastreabilidade e aplicabilidade dos manuais.
+- Registro local do progresso das aulas.
+- Biblioteca da Montagem com seis áreas:
+  1. Organograma da Montagem
+  2. Lean Manufacturing
+  3. Programas
+  4. Pré-eleição
+  5. Estrutura da Montagem
+  6. Modelos de Eixos
 
-## React Compiler
+## Executar localmente
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Requer Node.js compatível com a versão de Vite configurada no projeto.
 
-## Expanding the Oxlint configuration
+```bash
+npm ci
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## Verificações
+
+```bash
+npm run build
+npm run lint
+```
+
+## Importante sobre conteúdo técnico
+
+Esta aplicação é material didático de apoio. Ela não substitui instruções de trabalho, manuais ou procedimentos oficiais vigentes. Confirme modelo, variante, revisão e aplicabilidade documental antes de utilizar especificações técnicas.
+
+Algumas áreas — como Organograma, Programas e Estrutura da Montagem — estão marcadas como iniciais ou preliminares porque as fontes disponíveis ainda exigem validação pela equipe responsável. Os nomes e as informações não confirmados não devem ser tratados como padrões oficiais.
