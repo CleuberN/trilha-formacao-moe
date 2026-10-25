@@ -189,3 +189,96 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 .area-source-note p{font-size:11px;line-height:1.7;color:#846e4b;margin:6px 0 0}
 @media(max-width:850px){.areas-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.areas-mini-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.assembly-library-preview{padding:17px}.areas-grid{grid-template-columns:1fr}.area-card{min-height:170px}.areas-hero{padding:25px 21px}.areas-hero h1{font-size:27px}.area-detail{padding:18px}.area-detail-heading h2{font-size:20px}.areas-mini-grid{grid-template-columns:1fr}.areas-mini-grid button{padding:12px}}
+
+
+/* Design refinado MOE: ritmo visual, estados de interação e acessibilidade */
+:root {
+  color-scheme: light;
+  --moe-ink: #172536;
+  --moe-muted: #65778a;
+  --moe-line: #dce5ed;
+  --moe-surface: #ffffff;
+  --moe-surface-soft: #f7f9fb;
+  --moe-blue-deep: #0d2d48;
+  --moe-blue: #123b5d;
+  --moe-orange: #ff8a00;
+  --moe-orange-dark: #cc6b00;
+  --moe-focus: #006ecb;
+}
+html { scroll-behavior: smooth; }
+body {
+  color: var(--moe-ink);
+  background:
+    radial-gradient(ellipse at 12% 0%, rgba(18,59,93,.055), transparent 38rem),
+    var(--moe-background, #f3f6f9);
+}
+button, input { -webkit-tap-highlight-color: transparent; }
+button { transition: background-color .18s ease, color .18s ease, border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+button:focus-visible, input:focus-visible {
+  outline: 3px solid var(--moe-focus);
+  outline-offset: 3px;
+}
+.app { width: min(100%, 1512px); }
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(243,246,249,.92);
+  backdrop-filter: blur(14px);
+}
+.brand { letter-spacing: -.35px; }
+.hero {
+  box-shadow: 0 18px 42px rgba(13,45,72,.12);
+  isolation: isolate;
+}
+.hero:after { user-select: none; }
+.hero-tags span { backdrop-filter: blur(4px); }
+.section-heading h2,.progress-copy h2 { letter-spacing: -.75px; }
+.axis-card,.module-card,.progress-panel,.assembly-library-preview,.area-card,.area-detail,
+.lesson-reader,.lesson-outline,.resource-card {
+  box-shadow: 0 8px 26px rgba(19,48,73,.035);
+}
+.axis-card,.module-card,.area-card,.resource-card { transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.axis-card:hover,.resource-card:hover {
+  border-color: #c2d3e1;
+  box-shadow: 0 12px 30px rgba(19,48,73,.08);
+}
+.module-card:hover,.area-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 28px rgba(19,48,73,.09);
+}
+.primary-btn {
+  color: #172536;
+  background: linear-gradient(135deg, #ffad36, #ff8a00 72%);
+  box-shadow: 0 5px 14px rgba(255,138,0,.2);
+}
+.primary-btn:hover { background: linear-gradient(135deg, #ffb84e, #e77c00 72%); }
+.secondary-btn:hover,.lesson-pagination button:not(:disabled):hover { background: #dfeaf2; border-color: #bfd2e1; }
+.module-card:focus-visible,.area-card:focus-visible,.areas-mini-grid button:focus-visible { outline-offset: 4px; }
+.status-pill,.resource-tag { letter-spacing: .25px; }
+.progress-track { background: #e7edf2; }
+.progress-track div { background: linear-gradient(90deg,#19a974,#36bd87); }
+.areas-hero { box-shadow: 0 16px 34px rgba(18,59,93,.12); }
+.area-card-active { box-shadow: 0 8px 22px rgba(255,138,0,.1); }
+.area-topic { background: #fff; }
+.lesson-reader,.lesson-outline,.resource-card { box-shadow: 0 8px 24px rgba(19,48,73,.045); }
+.learning-tip { background: linear-gradient(115deg,#f1f7fb,#f8fafc); }
+.footer { color: #65778a; }
+@media (hover: hover) and (pointer: fine) {
+  .primary-btn:hover,.secondary-btn:hover { transform: translateY(-1px); }
+}
+@media (max-width: 700px) {
+  .topbar { position: relative; backdrop-filter: none; }
+  .hero { border-radius: 14px; }
+  .areas-hero { border-radius: 14px; }
+  .module-card:hover,.area-card:hover { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
