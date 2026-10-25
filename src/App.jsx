@@ -48,6 +48,42 @@ const modules = [
   ]}
 ];
 
+const quizQuestions = [
+  {
+    id: "torque",
+    question: "Antes de aplicar o torque de montagem, o que você deve fazer?",
+    options: [
+      "Usar o valor lembrado de um eixo parecido.",
+      "Consultar a instrução aprovada para o modelo e a variante.",
+      "Escolher um valor aproximado e continuar."
+    ],
+    correct: 1,
+    feedback: "O torque é específico da aplicação. Confirme modelo, variante e instrução vigente antes de executar."
+  },
+  {
+    id: "inspection",
+    question: "A inspeção visual substitui todas as medições e testes obrigatórios?",
+    options: [
+      "Sim, se a peça parecer em boas condições.",
+      "Somente quando o operador tem experiência.",
+      "Não. Cada controle obrigatório deve seguir o procedimento aplicável."
+    ],
+    correct: 2,
+    feedback: "A inspeção visual não substitui medições nem testes exigidos pelo procedimento."
+  },
+  {
+    id: "manuals",
+    question: "Você pode aplicar um procedimento de eixo 18X em um eixo 17X sem validar a aplicação?",
+    options: [
+      "Não. É necessário confirmar modelo, variante e documentação aplicável.",
+      "Sim, porque os dois são diferenciais.",
+      "Sim, desde que as peças pareçam semelhantes."
+    ],
+    correct: 0,
+    feedback: "Mantenha procedimentos e manuais separados até confirmar formalmente a aplicação correta."
+  }
+];
+
 const axes = {
   iveco: { title: "IVECO MS-23", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/iveco-ms23.jpeg", note: "A aplicação dos manuais disponíveis ao MS-23 ainda precisa ser confirmada. Não utilize parâmetros de outros modelos sem validação." },
   daf: { title: "DAF MD", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/daf-md.jpeg", note: "Confirme a identificação completa e a variante do eixo DAF MD antes de associar procedimentos ou especificações de um manual." }
@@ -160,14 +196,31 @@ function App() {
             <div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
             <div className="lesson-title-row"><div><span className="eyebrow">{currentModule.level.toUpperCase()} · {currentModule.lessons.length} AULAS</span><h1>{currentModule.title}</h1><p className="lead">{currentModule.summary}</p></div><span className="large-module-icon">{currentModule.icon}</span></div>
             {currentModule.id === "moe" && <div className="axis-context"><strong>Treinamento selecionado: {axes[axis].title}</strong><p>{axes[axis].note}</p></div>}
-            <div className="lesson-content-grid">
+            {currentModule.id === "quiz" && <section className="interactive-quiz" aria-labelledby="quiz-heading">
+              <div className="quiz-header"><div><span className="eyebrow">AVALIAÇÃO DE CONHECIMENTO</span><h2 id="quiz-heading">Quiz MOE</h2><p>Responda às perguntas com base nos conceitos apresentados na trilha.</p></div><span className="quiz-score">{Object.keys(quizAnswers).length}/{quizQuestions.length} respondidas</span></div>
+              {quizQuestions.map((item, index) => {
+                const selected = quizAnswers[item.id];
+                const answered = selected !== undefined;
+                return <article className="quiz-question" key={item.id}>
+                  <div className="quiz-question-title"><span>{String(index + 1).padStart(2, "0")}</span><h3>{item.question}</h3></div>
+                  <div className="quiz-options">{item.options.map((option, optionIndex) => {
+                    const isSelected = selected === optionIndex;
+                    const isCorrect = answered && optionIndex === item.correct;
+                    return <button key={option} type="button" disabled={answered} className={`quiz-option${isSelected ? " chosen" : ""}${isCorrect ? " correct" : ""}${isSelected && optionIndex !== item.correct ? " incorrect" : ""}`} onClick={() => setQuizAnswers(previous => ({ ...previous, [item.id]: optionIndex }))}><span className="quiz-option-letter">{String.fromCharCode(65 + optionIndex)}</span><span>{option}</span>{isCorrect && <strong aria-label="Resposta correta">✓</strong>}</button>;
+                  })}</div>
+                  {answered && <p className={selected === item.correct ? "quiz-feedback positive" : "quiz-feedback"}><strong>{selected === item.correct ? "Resposta correta." : "Vamos revisar."}</strong> {item.feedback}</p>}
+                </article>;
+              })}
+              {Object.keys(quizAnswers).length === quizQuestions.length && <div className="quiz-result" role="status"><span className="eyebrow">RESULTADO</span><strong>{quizQuestions.filter(item => quizAnswers[item.id] === item.correct).length} de {quizQuestions.length} respostas corretas</strong><p>{quizQuestions.every(item => quizAnswers[item.id] === item.correct) ? "Muito bem! Você acertou todas as perguntas." : "Revise os comentários e tente novamente para reforçar os conceitos."}</p><button className="primary-btn" type="button" onClick={() => setQuizAnswers({})}>Refazer quiz</button></div>}
+            </section>}
+            <div className={`lesson-content-grid${currentModule.id === "quiz" ? " quiz-legacy-hidden" : ""}`}>
               <div className="lesson-reader"><div className="lesson-meta"><span>AULA {String(activeLesson + 1).padStart(2, "0")}</span><span>{completed.includes(currentModule.id + ":" + activeLesson) ? "✓ Concluída" : "Em andamento"}</span></div><h2>{currentLesson.title}</h2><p>{currentLesson.body}</p>
                 <div className="learning-tip"><span>💡</span><div><strong>Prática recomendada</strong><p>Consulte a instrução de trabalho vigente e tire dúvidas com a liderança antes de executar uma operação real.</p></div></div>
                 <div className="lesson-actions"><button className={completed.includes(currentModule.id + ":" + activeLesson) ? "secondary-btn" : "primary-btn"} onClick={() => toggleComplete(currentModule.id + ":" + activeLesson)}>{completed.includes(currentModule.id + ":" + activeLesson) ? "Desmarcar conclusão" : "Marcar aula como concluída"}</button><div className="lesson-pagination"><button disabled={activeLesson === 0} onClick={() => setActiveLesson(v => v - 1)}>← Anterior</button><button disabled={activeLesson === currentModule.lessons.length - 1} onClick={() => setActiveLesson(v => v + 1)}>Próxima →</button></div></div>
               </div>
               <aside className="lesson-outline"><h3>Nesta aula</h3>{currentModule.lessons.map((l, i) => <button key={l.title} onClick={() => setActiveLesson(i)} className={i === activeLesson ? "outline-item active" : "outline-item"}><span>{completed.includes(currentModule.id + ":" + i) ? "✓" : String(i + 1).padStart(2, "0")}</span>{l.title}</button>)}<div className="outline-note"><strong>Material de apoio</strong><p>Use os manuais e procedimentos aprovados para confirmar dados específicos do modelo.</p><button onClick={() => setView("library")}>Abrir biblioteca →</button></div></aside>
             </div>
-            {currentModule.id === "quiz" && <div className="quiz-note"><strong>Revisão rápida</strong><p>As respostas esperadas estão explicadas em cada pergunta. A versão avaliativa com pontuação será uma próxima melhoria.</p></div>}
+            
           </>}
         </div>
       </section>}
