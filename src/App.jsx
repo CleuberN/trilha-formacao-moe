@@ -48,6 +48,73 @@ const modules = [
   ]}
 ];
 
+// Conteúdo transcrito das folhas de mentoria: manter observações de leitura incerta para validação.
+modules.push(
+  {
+    id: "folhas-estrutura",
+    icon: "🏗️",
+    title: "Estrutura da MOE e Estações",
+    level: "Conteúdo da mentoria",
+    summary: "Estrutura da linha, controles comuns, sequência das estações e postos complementares transcritos das folhas.",
+    lessons: [
+      { title: "Visão geral da MOE", body: "Conforme as folhas, a MOE é formada por 18 postos de trabalho e 4 postos/estações; a relação exata entre esses números precisa ser confirmada. A folha cita o programa “Amino Flexnet” (grafia a confirmar), que auxilia na sequência e na qualidade do processo. O sistema monitora e controla etapas em tempo real e compara o planejado com o executado." },
+      { title: "ARO e LPT — controles de todos os postos", body: "As folhas indicam que todos os postos e estações contêm ARO e LPT. ARO significa Análise de Risco Operacional e contempla descrição das etapas, riscos, medidas de prevenção e EPIs obrigatórios. LPT significa Liberação do Posto de Trabalho: inspecionar MPT e MPF antes de iniciar, dar OK e assinar; se houver anomalia, comunicar imediatamente a liderança. MPT e MPF foram mantidas conforme a folha e seus significados precisam ser confirmados." },
+      { title: "Estações 10, 20 e 30", body: "Estação 10: preparação da montagem da carcaça para fixação do diferencial. Estação 20: validação do diferencial e posicionamento na carcaça. Estação 30: fixação do diferencial na carcaça, posicionamento para a palletaria, início da montagem e montagem do intermediário. A descrição da estação 30 contém trecho parcialmente incerto na transcrição." },
+      { title: "Estações 40, 50, 60 e 70", body: "Estação 40: fixação e posicionamento do freio esquerdo (LE). Estação 50: instalação do ABS e fixação do componente do lado esquerdo; a palavra manuscrita após “fixação do” está incerta (“fog”/“freio” na leitura). Estação 60: posicionamento e fixação do freio direito (LD). Estação 70: instalação do ABS e fixação do componente do lado direito; a palavra manuscrita está incerta. A folha menciona submontagem do ABS nas estações 50 e 70." },
+      { title: "Estações 80, 90 e 100", body: "Estação 80: montagem do cubo com as travas do conjunto, observando as características de segurança, lado direito. Estação 90: mesma descrição para o lado esquerdo. Estação 100: conferência visual das travas e das características de segurança; montagem e fixação do semieixo; regulagem e ajuste do freio." },
+      { title: "Estações 120, 130 e 140", body: "Estação 120: teste de estanqueidade para verificar vazamentos. Estação 130: abastecimento de óleo e termo transcrito como “memorial” (a confirmar); observação manuscrita: “memorial 1: engraxar o eixo para a pintura”. Estação 140: inspeção final com checklist; inspeção visual de 100% dos componentes, no mínimo 4 fotos para liberação e conferência dos requisitos do pedido do cliente. A transcrição não apresenta descrição para a estação 110; não completar por suposição." },
+      { title: "Postos complementares", body: "Posto de pintura: sem estação numerada por não haver computador no processo; inspeção 100% visual, com validação, LPT e ARO. A folha parece mencionar temperatura e viscosidade, mas a frase completa precisa ser confirmada. Posto transcrito como “Memória 2”: recebe o eixo da pintura, realiza retoques e posiciona em embalagem adequada; o termo de embalagem aparece como “PIG” na leitura provável. Submontagem do eixo intermediário: prensa 2605, Poka-Yoke/controle de erro associado à máquina 2606 e teste de folga. Há também posto de montagem do garfo e submontagem do diferencial, ambos mencionados separadamente. A oficina recebe retrabalho, ajustes e correções gerais. Os postos fora das estações também seguem validação por ARO e LPT." }
+    ]
+  },
+  {
+    id: "folhas-preeleicao",
+    icon: "📊",
+    title: "Pré-eleição",
+    level: "Conteúdo da mentoria",
+    summary: "Ferramentas de acompanhamento da operação, produção, retrabalho, segurança e gerenciamento 8D.",
+    lessons: [
+      { title: "Quadro e escala", body: "O quadro ajuda a visualizar quem está trabalhando, em qual turno e qual função ou operação realiza. Na escala, o líder considera as habilidades e o treinamento de cada pessoa e distribui a equipe entre postos/estações; permite identificar disponibilidade e local de atuação." },
+      { title: "Quadro de ocorrências", body: "Serve para registrar problemas e situações identificadas na área e acompanhar seu tratamento. Os campos anotados são quantidade, oficina, causa e solução; a primeira palavra dos campos precisa ser confirmada na folha original." },
+      { title: "Gráfico de gestão de retrabalho", body: "Mostra quando algo precisa ser corrigido, ajustado ou novamente trabalhado porque não ficou conforme o esperado. As dicas das folhas: fazer o processo corretamente na primeira vez; acompanhar a quantidade, entender por que e onde aconteceu e identificar o que está sendo feito para evitar recorrência." },
+      { title: "Produção diária e OEE", body: "Acompanhar quanto a área deveria produzir e quanto realmente produziu: meta, produção realizada, comparação e análise dos desvios. A folha cita OEE — Índice de Eficiência Global — e traz o exemplo realizado 68, meta 85: 68 ÷ 85 = 0,8 × 100 = 80%; resultado anotado: OEE 80%. O exemplo foi preservado como transcrito." },
+      { title: "Carta de controle hora a hora", body: "A carta reúne meta prevista para cada período, produção realizada, comparação, identificação de desvios e ação da liderança. Ajuda a acompanhar o turno e agir diante de diferenças entre o planejado e o realizado." },
+      { title: "Segurança e meio ambiente", body: "As folhas descrevem o acompanhamento da segurança das pessoas, identificação de riscos e aspectos ambientais da operação. O item de meio ambiente acompanha os aspectos ambientais relacionados à operação." },
+      { title: "Acompanhamento diário de retrabalho", body: "Acompanhar diariamente a quantidade e a evolução dos retrabalhos da linha. A transcrição contém os termos “engrenamento, componente danificado, montagem, fornecedores”, mas a leitura desse trecho é parcial e precisa ser confirmada." },
+      { title: "Gerenciamento 8D — Produção", body: "O 8D é descrito nas folhas como uma forma estruturada de tratar um problema da produção, investigar a causa e definir ações. Seleciona-se uma equipe para acompanhar o caso, com prazo e ação. Exemplo anotado: um componente errado foi entregue ao cliente, não atingiu a funcionalidade esperada, houve reclamação e o eixo retorna para verificação e análise. Anotação final: “8D — qualidade, refugo e ação corretiva”." }
+    ]
+  },
+  {
+    id: "folhas-organograma",
+    icon: "👥",
+    title: "Organograma da Montagem",
+    level: "Conteúdo da mentoria",
+    summary: "Estrutura de liderança, responsáveis técnicos e funções de qualidade conforme as folhas.",
+    lessons: [
+      { title: "Estrutura de liderança", body: "Transcrição provável da folha: Jorge Silveira — Diretor de Operações; Gerardo Rodrigues — Gerente da Montagem; Alessandro T. Shiota — Gerente de Industrialização; Roberto — Supervisor de manufatura/montagem. A grafia de alguns nomes e a relação exata dos cargos precisam ser confirmadas antes de uso oficial." },
+      { title: "Lideranças por turno", body: "Anotações das folhas: Bruno — MOE e MDX, manhã/1º turno; Anderson — MOP, manhã/1º turno; Renato — MOD/MDC, manhã/1º turno; Clécio — MDC, MOD, MOE e MOP, noite/3º turno. As siglas e associações devem ser conferidas na folha original." },
+      { title: "Condutores, engenheiros e responsáveis por área", body: "A anotação indica que depois do supervisor vêm condutores e engenheiros. Relações anotadas: MOE — Samuel Gigna (grafia incerta); MOP — Kleiton Santos; MOD e MDC — Alex Cardoso; MDX — Samuel Guerra; Oficina — Kleiton Santos. A folha descreve esses responsáveis como atuantes na parte técnica da linha, segurança, qualidade e produção, ajudando a resolver dificuldades do dia a dia. A frase anotada é próxima de: “Todo problema técnico da linha é [do] engenheiro”." },
+      { title: "Qualidade e inspeção", body: "Depois dos líderes vêm analista/inspetor. Analista de qualidade e operador de qualidade atuam como inspetores, com responsabilidade pelo controle de refugo, retrabalho e reclamações. As folhas citam alerta de reclamação do cliente e alerta de reclamação interna. Os nomes “Josiel Claro e João” aparecem no final, mas a relação com os cargos não está clara." }
+    ]
+  },
+  {
+    id: "folhas-lean",
+    icon: "♻️",
+    title: "Lean Manufacturing",
+    level: "Conteúdo da mentoria",
+    summary: "Os oito desperdícios conforme descritos nas folhas de formação.",
+    lessons: [
+      { title: "Defeito", body: "Produzir defeito pode gerar mais trabalho de retrabalho. A orientação anotada é fazer certo da primeira vez para evitar defeitos." },
+      { title: "Espera", body: "Tempo perdido esperando o processo." },
+      { title: "Transporte", body: "Movimentações desnecessárias de um lado para outro, causando perda de tempo." },
+      { title: "Estoque", body: "Excesso de produto e material, que representa dinheiro parado e ocupa espaço." },
+      { title: "Movimentação", body: "Movimentos desnecessários executados pelas pessoas, como andar de um lado para outro." },
+      { title: "Processamento excessivo", body: "Operações ou exigências de qualidade maiores do que o necessário; fazer coisas que não precisam ser feitas." },
+      { title: "Superprodução", body: "Produzir em excesso, sem respeitar uma demanda definida." },
+      { title: "Desperdício de habilidade/conhecimento", body: "Subutilização das pessoas: não colocar as pessoas certas nas tarefas certas e não aproveitar as habilidades e os talentos disponíveis." }
+    ]
+  }
+);
+
 const quizQuestions = [
   {
     id: "torque",
