@@ -654,3 +654,41 @@ html, body {
   .axis-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; }
   .axis-card { display: flex !important; flex-direction: column !important; }
 }
+
+
+/* CORREÇÃO DE FUNDO E LARGURA DA PÁGINA EM DISPOSITIVOS MÓVEIS */
+:root {
+  background-color: #110c26 !important;
+}
+html, body {
+  background-color: #110c26 !important;
+  background-image:
+    radial-gradient(ellipse at 12% 42%, rgba(255,42,116,.22), transparent 42%),
+    radial-gradient(ellipse at 88% 70%, rgba(139,92,246,.20), transparent 45%),
+    linear-gradient(135deg, #0b071e 0%, #1a1034 55%, #110c26 100%) !important;
+  background-attachment: fixed !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+}
+#root {
+  width: 100% !important;
+  min-width: 0 !important;
+  min-height: 100vh !important;
+  background: transparent !important;
+}
+main.app.glassPageBackground {
+  width: 100% !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  background: transparent !important;
+}
+@media (max-width: 900px) {
+  main.app.glassPageBackground {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
