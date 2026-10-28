@@ -149,6 +149,7 @@ function App() {
             <div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
             <div className="lesson-title-row"><div><span className="eyebrow">{currentModule.level.toUpperCase()} · {currentModule.lessons.length} AULAS</span><h1>{currentModule.title}</h1><p className="lead">{currentModule.summary}</p></div><span className="large-module-icon">{currentModule.icon}</span></div>
             {currentModule.id === "moe" && <div className="axis-context"><strong>Treinamento selecionado: {axes[axis].title}</strong><p>{axes[axis].note}</p></div>}
+            {currentModule.id === "organograma" && <OrganogramaVisual />}
             <div className="lesson-content-grid">
               <div className="lesson-reader"><div className="lesson-meta"><span>AULA {String(activeLesson + 1).padStart(2, "0")}</span><span>{completed.includes(currentModule.id + ":" + activeLesson) ? "✓ Concluída" : "Em andamento"}</span></div><h2>{currentLesson.title}</h2><p>{currentLesson.body}</p>
                 <div className="learning-tip"><span>💡</span><div><strong>Prática recomendada</strong><p>Consulte a instrução de trabalho vigente e tire dúvidas com a liderança antes de executar uma operação real.</p></div></div>
@@ -163,6 +164,90 @@ function App() {
 
       <footer className="footer"><strong>Biblioteca MOE</strong><span>Material didático de apoio. Procedimentos oficiais e instruções vigentes têm prioridade.</span><button onClick={() => setView("home")}>Voltar ao início ↑</button></footer>
     </main>
+  );
+}
+
+
+function OrganogramaVisual() {
+  const groups = [
+    { title: "Direção de Operações", people: [{ name: "Jorge Silveira", role: "Diretor de Operações — América do Sul" }] },
+    { title: "Gerências", people: [
+      { name: "Gerardo Rodrigues", role: "Gerente da Montagem" },
+      { name: "Alessandro T. Shiota", role: "Gerente de Industrialização" }
+    ] },
+    { title: "Supervisão", people: [{ name: "Roberto", role: "Supervisor de Fabricação / Montagem" }] },
+  ];
+  const leaders = [
+    { name: "Bruno", area: "MOE e MDX", shift: "Manhã · 1º turno", color: "gold" },
+    { name: "Anderson", area: "MOP", shift: "Manhã · 1º turno", color: "green" },
+    { name: "Renato", area: "MOD / MDC", shift: "Manhã · 1º turno", color: "blue" },
+    { name: "Clécio", area: "MDC, MOD, MOE e MOP", shift: "Noite · 3º turno", color: "pink" },
+  ];
+  const owners = [
+    { name: "Samuel Gigna*", area: "MOE", color: "gold" },
+    { name: "Kleiton Santos", area: "MOP", color: "green" },
+    { name: "Alex Cardoso", area: "MOD / MDC", color: "blue" },
+    { name: "Samuel Guerra", area: "MDX", color: "pink" },
+    { name: "Kleiton Santos", area: "Oficina / Workshop", color: "purple" },
+  ];
+  const areas = [
+    ["MOE", "Montagem de Eixos"],
+    ["MOP", "Montagem de Peças"],
+    ["MOD", "Montagem do Diferencial"],
+    ["MDC", "Montagem da Carcaça"],
+    ["MDX", "Montagem do Eixo Intermediário"],
+    ["Oficina / Workshop", "Ajustes, retrabalhos e correções em geral"],
+  ];
+  return (
+    <section className="org-chart" aria-label="Organograma visual da montagem MOE">
+      <div className="org-intro">
+        <span className="eyebrow">ESTRUTURA ORGANIZACIONAL</span>
+        <h2>Organograma da Montagem</h2>
+        <p>MOE — Montagem de Eixos</p>
+        <span className="org-validation">Rascunho para validação interna</span>
+      </div>
+      <div className="org-hierarchy">
+        {groups.map((group, index) => <div className="org-level" key={group.title}>
+          {index > 0 && <div className="org-connector" aria-hidden="true" />}
+          <div className={index === 0 ? "org-person org-director" : index === 1 ? "org-person org-manager" : "org-person org-supervisor"}>
+            <span className="org-person-icon" aria-hidden="true">●</span>
+            <div><span className="org-role-label">{group.title}</span>{group.people.map(person => <div key={person.name}><strong>{person.name}</strong><span>{person.role}</span></div>)}</div>
+          </div>
+        </div>)}
+        <div className="org-connector" aria-hidden="true" />
+        <section className="org-team-section">
+          <h3>Líderes de turno</h3>
+          <div className="org-people-grid org-leaders">{leaders.map(person => <article className={"org-team-card " + person.color} key={person.name}>
+            <strong>{person.name}</strong><span>{person.area}</span><small>{person.shift}</small>
+          </article>)}</div>
+        </section>
+        <div className="org-connector" aria-hidden="true" />
+        <section className="org-team-section org-tech-section">
+          <h3>Responsáveis técnicos por área</h3>
+          <div className="org-people-grid org-owners">{owners.map(person => <article className={"org-team-card " + person.color} key={person.name + person.area}>
+            <strong>{person.name}</strong><span>{person.area}</span>
+          </article>)}</div>
+        </section>
+      </div>
+      <div className="org-details-grid">
+        <section className="org-detail-panel">
+          <h3>Áreas da montagem</h3>
+          <dl>{areas.map(([sigla, description]) => <div key={sigla}><dt>{sigla}</dt><dd>{description}</dd></div>)}</dl>
+        </section>
+        <section className="org-detail-panel">
+          <h3>Responsabilidades principais</h3>
+          <dl>
+            <div><dt>Diretoria</dt><dd>Direção estratégica da operação.</dd></div>
+            <div><dt>Gerências</dt><dd>Gestão da montagem e da industrialização.</dd></div>
+            <div><dt>Supervisão</dt><dd>Coordenação da manufatura e da montagem.</dd></div>
+            <div><dt>Líderes de turno</dt><dd>Distribuição da equipe e acompanhamento da produção.</dd></div>
+            <div><dt>Responsáveis técnicos</dt><dd>Apoio técnico à linha, segurança, qualidade e solução de problemas.</dd></div>
+            <div><dt>Oficina / Workshop</dt><dd>Ajustes, retrabalhos e correções, conforme a necessidade.</dd></div>
+          </dl>
+        </section>
+      </div>
+      <p className="org-footnote">* A grafia de “Samuel Gigna” e os nomes, cargos, áreas, turnos e relações hierárquicas devem ser confirmados com a liderança. As anotações também citam “Josiel Claro” e “João”, sem informação suficiente para atribuir cargos.</p>
+    </section>
   );
 }
 
