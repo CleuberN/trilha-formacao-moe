@@ -194,3 +194,39 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 .org-footnote{font-size:10px;line-height:1.7;color:#788798;margin:12px 2px 0}
 @media(max-width:900px){.org-leaders{grid-template-columns:repeat(2,minmax(0,1fr))}.org-owners{grid-template-columns:repeat(2,minmax(0,1fr))}.org-details-grid{grid-template-columns:1fr}}
 @media(max-width:520px){.org-intro{padding:19px 16px}.org-hierarchy{padding:17px 10px}.org-person{padding:13px 12px;gap:11px}.org-person-icon{width:35px;height:35px}.org-person strong{font-size:14px}.org-person span:not(.org-person-icon):not(.org-role-label){font-size:11px}.org-team-section{padding:12px 9px}.org-team-section h3{font-size:12px}.org-leaders{grid-template-columns:1fr 1fr;gap:7px}.org-owners{grid-template-columns:1fr 1fr;gap:7px}.org-team-card{padding:10px 8px}.org-team-card strong{font-size:12px}.org-team-card span{font-size:10px}.org-team-card small{font-size:9px}.org-detail-panel{padding:13px}.org-detail-panel dl>div{grid-template-columns:100px minmax(0,1fr);gap:7px}.org-detail-panel dt,.org-detail-panel dd{font-size:10px}}
+
+
+/* Ajustes de legibilidade do organograma: leitura confortável em desktop e celular */
+.org-intro h2{font-size:clamp(28px,3.2vw,36px);line-height:1.25}
+.org-intro p{font-size:16px;line-height:1.55}
+.org-validation{font-size:12px}
+.org-team-section h3,.org-detail-panel h3{font-size:17px;line-height:1.4}
+.org-person{padding:18px 22px}
+.org-person strong{font-size:19px;line-height:1.35}
+.org-person span:not(.org-person-icon):not(.org-role-label){font-size:15px;line-height:1.55}
+.org-role-label{font-size:12px;line-height:1.4}
+.org-team-card{padding:15px}
+.org-team-card strong{font-size:18px;line-height:1.4}
+.org-team-card span{font-size:15px;line-height:1.5}
+.org-team-card small{font-size:13px;line-height:1.5}
+.org-detail-panel dl>div{padding:10px 0}
+.org-detail-panel dt{font-size:14px;line-height:1.5}
+.org-detail-panel dd{font-size:14px;line-height:1.6}
+.org-footnote{font-size:13px;line-height:1.7}
+@media(max-width:700px){
+ .org-intro h2{font-size:27px;letter-spacing:-.3px}
+ .org-intro p{font-size:15px}
+ .org-team-section h3,.org-detail-panel h3{font-size:16px}
+ .org-person{padding:15px 12px;gap:12px}
+ .org-person strong{font-size:17px}
+ .org-person span:not(.org-person-icon):not(.org-role-label){font-size:14px}
+ .org-role-label{font-size:11px}
+ .org-leaders,.org-owners{grid-template-columns:1fr}
+ .org-team-card{padding:13px}
+ .org-team-card strong{font-size:17px}
+ .org-team-card span{font-size:14px}
+ .org-team-card small{font-size:13px}
+ .org-detail-panel dl>div{grid-template-columns:minmax(95px,.7fr) minmax(0,1.3fr);gap:10px;padding:10px 0}
+ .org-detail-panel dt,.org-detail-panel dd{font-size:13px;line-height:1.6}
+ .org-footnote{font-size:13px}
+}
