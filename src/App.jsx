@@ -223,7 +223,7 @@ function App() {
             <div className="source-alert"><strong>Importante</strong><p>Os manuais abaixo têm escopos diferentes. A presença de um documento na biblioteca não comprova que ele se aplica ao IVECO MS-23 ou à variante DAF MD em treinamento.</p></div>
             <div className="resource-list">{modules.find(m => m.id === "biblioteca").lessons.map((l, i) => <article className="resource-card" key={l.title}><span className="resource-number">0{i + 1}</span><div><h3>{l.title}</h3><p>{l.body}</p><span className="resource-tag">Conteúdo de orientação</span></div></article>)}</div>
           </> : <>
-            {currentModule.id === "estrutura-moe" ? <Etapa5EstruturaReference /> : <>
+            {currentModule.id === "estrutura-moe" ? <Etapa5EstruturaReference /> : currentModule.id === "estacoes-moe" ? <EstacoesPostosReference /> : <>
 <div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
             <div className="lesson-title-row"><div><span className="eyebrow">{currentModule.level.toUpperCase()} · {currentModule.lessons.length} AULAS</span><h1>{currentModule.title}</h1><p className="lead">{currentModule.summary}</p></div><span className="large-module-icon">{currentModule.icon}</span></div>
             {currentModule.id === "moe" && <div className="axis-context"><strong>Treinamento selecionado: {axes[axis].title}</strong><p>{axes[axis].note}</p></div>}
@@ -247,6 +247,48 @@ function App() {
   );
 }
 
+
+function EstacoesPostosReference() {
+  const stations = [
+    ["Estação 10", "Preparação e montagem da carcaça para fixação do diferencial."],
+    ["Estação 20", "Validar o diferencial e posicioná-lo na carcaça."],
+    ["Estação 30", "Fixar o diferencial à carcaça, posicionar para paleteira e iniciar a montagem/montar o intermediário. Confirmar a sequência na folha original."],
+    ["Estação 40", "Posicionar e fixar o freio esquerdo (LE)."],
+    ["Estação 50", "Instalar o ABS e fixar o componente anotado como “fog” no lado esquerdo. Confirmar o termo na instrução oficial."],
+    ["Estação 60", "Posicionar e fixar o freio direito (LD)."],
+    ["Estação 70", "Instalar o ABS e fixar o componente anotado como “fog” no lado direito. Confirmar o termo na instrução oficial."],
+    ["Estação 80", "Montar o cubo e as travas de montagem no lado direito (LD)."],
+    ["Estação 90", "Montar o cubo e as travas de montagem no lado esquerdo (LE)."],
+    ["Estação 100", "Verificação visual das características de segurança, montagem/fixação do semieixo e ajuste/regulagem do freio. Confirmar a sequência no roteiro oficial."],
+    ["Estação 110", "A folha fornecida não descreve a atividade desta estação."],
+    ["Estação 120", "Teste de estanqueidade."],
+    ["Estação 130", "Abastecimento de óleo e “Memória 1”. Há também uma anotação sobre engraxar o eixo para pintura; confirmar a sequência."],
+    ["Estação 140", "Checklist final, inspeção visual de 100%, mínimo de quatro fotos para liberação e atendimento aos requisitos do pedido do cliente."],
+  ];
+  return (
+    <article className="etapa5-reference estacoes-postos-reference">
+      <h1>ESTAÇÕES E POSTOS DE MONTAGEM</h1>
+      <p className="etapa5-subtitle">Consulte as atividades registradas por estação e os postos complementares da linha.</p>
+      <section className="etapa5-siglas">
+        <h2>Siglas importantes</h2>
+        <p>ARO = Análise de Risco Operacional. LPT = Liberação do Posto de Trabalho.</p>
+      </section>
+      <section className="etapa5-stations-reference">
+        <h2>Estações da linha</h2>
+        <div>{stations.map(([name, description]) => <p key={name}><strong>{name}</strong> — {description}</p>)}</div>
+      </section>
+      <section className="etapa5-stations-reference estacoes-extra">
+        <h2>Postos complementares</h2>
+        <p><strong>Pintura</strong> — posto sem número anotado por não ter computador; inspeção visual de 100%, validação, LPT e ARO. As notas sobre temperatura e viscosidade não detalham critérios.</p>
+        <p><strong>Memória 2</strong> — recebe o eixo da pintura, realiza retoques e posiciona em embalagem adequada; confirmar a sigla/termo da embalagem.</p>
+        <p><strong>Submontagem do eixo intermediário</strong> — prensa 2605, máquina/controle Poka-Yoke 2606 e teste de folga.</p>
+        <p><strong>Montagem do garfo</strong> — posto complementar citado nas anotações.</p>
+        <p><strong>Submontagem do diferencial</strong> — posto complementar citado nas anotações.</p>
+        <p><strong>Oficina</strong> — retrabalhos, ajustes e correções gerais.</p>
+      </section>
+    </article>
+  );
+}
 
 function Etapa5EstruturaReference() {
   const stations = [
