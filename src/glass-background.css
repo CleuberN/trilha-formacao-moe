@@ -1,0 +1,10 @@
+/* Fundo sutil para deixar a transparência do vidro perceptível sem competir com o conteúdo. */
+.glassPageBackground {
+  position: relative;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 12% 10%, rgba(25, 169, 116, 0.10), transparent 34%),
+    radial-gradient(ellipse at 86% 20%, rgba(65, 145, 210, 0.13), transparent 36%),
+    radial-gradient(ellipse at 56% 88%, rgba(255, 138, 0, 0.07), transparent 36%),
+    #f3f6f9;
+}
