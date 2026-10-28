@@ -614,3 +614,43 @@ body { overflow-x: hidden; }
   .hero-tags span:last-child:nth-child(odd) { grid-column: auto; justify-self: stretch; }
   .module-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+
+/* FIX DEFINITIVO: viewport mobile preenchido em toda a largura */
+html, body {
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#root {
+  display: block !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+@media (max-width: 900px) {
+  body { background: #110c26 !important; }
+  #root { width: 100% !important; }
+  .app, .app.glassPageBackground {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .topbar, .hero, .section-block, .axis-grid, .axis-card,
+  .progress-panel, .module-grid, .learning-layout, .lesson-main, .footer {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .axis-grid { display: grid !important; grid-template-columns: minmax(0, 1fr) !important; }
+  .axis-card { display: flex !important; flex-direction: column !important; }
+}
