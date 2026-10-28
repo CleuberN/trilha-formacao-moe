@@ -80,6 +80,54 @@ const modules = [
     { title: "Segurança — SESMT / HSE", body: "Equipe informada na apostila: Sandro Araújo, Carina Moreira, Ricardo Santos, Vanderlei Souza e Nara Szczygiel. A equipe atende a fábrica em geral e não está distribuída individualmente por linha.\n\nSESMT: Serviços Especializados em Segurança e em Medicina do Trabalho.\nHSE: Health, Safety and Environment — Saúde, Segurança e Meio Ambiente." },
     { title: "Siglas das linhas", body: "MDC — Montagem de Diferencial Célula.\nMOD — Montagem Diferencial.\nMDX — Montagem de Diferencial e Caixa.\nMOE — Montagem de Eixos.\nMOP — Montagem de Planetário.\n\nAs descrições e siglas seguem a apostila, página 3." }
   ]}
+  ,
+  { id: "etapa1-siglas", icon: "🏷️", title: "Etapa 1 — Siglas das linhas", level: "Consulta", summary: "Consulte o significado das siglas organizacionais e de segurança.", lessons: [
+    { title: "Siglas de montagem", body: "MDC — Montagem de Diferencial Célula.\nMOD — Montagem Diferencial.\nMDX — Montagem de Diferencial e Caixa.\nMOE — Montagem de Eixos.\nMOP — Montagem de Planetário." },
+    { title: "SESMT e HSE", body: "SESMT — Serviços Especializados em Segurança e em Medicina do Trabalho.\nHSE — Health, Safety and Environment — Saúde, Segurança e Meio Ambiente." }
+  ]},
+  { id: "etapa3-programas", icon: "🌱", title: "Etapa 3 — Programas e meio ambiente", level: "Fundamental", summary: "Housekeeping, 5S, Boa Ideia, campanha solidária, contenção e indicadores.", lessons: [
+    { title: "Housekeeping", body: "Organização, limpeza e conservação do local de trabalho. Mantém cada coisa no lugar, ajuda a preservar o ambiente e facilita a identificação de condições fora do padrão." },
+    { title: "5S — cinco práticas", body: "Seiri — Utilização: separar o necessário do desnecessário.\nSeiton — Organização: definir lugar para cada item e facilitar sua localização.\nSeiso — Limpeza: manter local e equipamentos limpos, observando anormalidades.\nSeiketsu — Padronização: criar e manter padrões visuais e rotinas.\nShitsuke — Disciplina: transformar padrões em hábito e cumprir os combinados." },
+    { title: "Programa Boa Ideia", body: "Programa de melhoria que incentiva colaboradores a sugerirem mudanças para tornar o trabalho mais seguro, eficiente, organizado ou com melhor qualidade. As ideias podem ser avaliadas, aprovadas, implementadas e acompanhadas; conforme as regras do programa, podem gerar pontos ou premiações." },
+    { title: "Campanha Maria Maia / Maria Aparecida", body: "Campanha solidária realizada há 25 anos, voltada ao apoio à Casa Maria Maia, instituição que atende crianças com deficiência e crianças em situação de abandono. A participação é voluntária, com contribuição mensal definida por cada pessoa; os recursos ajudam a instituição com itens necessários, como fraldas. A referência a Maria Aparecida está ligada à história que motivou a campanha." },
+    { title: "Objetivo de meio ambiente", body: "Assegurar que todos os colaboradores compreendam seu papel nas iniciativas de Saúde, Segurança e Meio Ambiente e participem ativamente da prevenção." },
+    { title: "Aplicação do kit de contenção", body: "Kit mínimo registrado na apostila: 12 mantas de contenção e 3 cordões de contenção. As mantas ajudam a absorver ou conter pequenos derramamentos; os cordões são usados para delimitar/conter a propagação do líquido. Seguir sempre o procedimento e as orientações de segurança da fábrica para a ocorrência específica." },
+    { title: "Indicadores ambientais", body: "VOC — Compostos Orgânicos Voláteis: gramas/SDLH.\nÁgua potável: m³ por colaborador.\nÁgua industrial: litros/SDLH.\nResíduos totais: % de reciclagem.\nGHG — Gases de Efeito Estufa: kg/SDLH.\n\nReferência de produção usada nos indicadores: quantidade de eixos produzidos. A sigla SDLH foi mantida conforme registrada na apostila, sem expandi-la por suposição." },
+    { title: "MPT — Manutenção Preventiva Total", body: "Verificação preventiva de máquinas e equipamentos: ruídos, vazamentos, falhas, níveis de óleo e outras condições que precisem de atenção." },
+    { title: "MPF — Manutenção Preventiva Ferramental", body: "Manutenção preventiva das ferramentas utilizadas no processo, como soquete, chave, chave do cubo, martelete, alavanca do cubo e alicate. O objetivo é manter as ferramentas em condição adequada e identificar danos ou desgaste." },
+    { title: "FIFI — Find It, Fix It (Encontre e Corrija)", body: "Usado para registrar situações observadas no trabalho, tanto positivas quanto negativas, que mereçam atenção ou melhoria. Pode envolver quase acidentes (Near Hit), condições ou comportamentos de risco, oportunidades de melhoria e assuntos de segurança, saúde, meio ambiente e outras situações relevantes. A ideia é identificar a situação e encaminhá-la para correção ou acompanhamento. Resumo: encontrar uma situação, registrar com clareza e contribuir para que seja corrigida ou melhorada." },
+    { title: "PAI — Programa de Adequação das Instalações", body: "Busca adequar instalações que apresentem riscos ou condições inadequadas relacionadas à Segurança, Saúde ou Meio Ambiente. A identificação ajuda a priorizar melhorias e reduzir exposição a riscos. A avaliação e a execução devem seguir os responsáveis e procedimentos internos da fábrica. Resumo: identificar e promover adequações para tornar as instalações mais seguras e apropriadas para as pessoas e para o meio ambiente." }
+  ]},
+  { id: "etapa4-prelecao", icon: "🗂️", title: "Etapa 4 — Preleção", level: "Fundamental", summary: "Estude os nove quadros, os indicadores e o uso das informações do turno.", lessons: [
+    { title: "Para que serve a preleção", body: "A preleção reúne informações para orientar a equipe sobre pessoas, produção, segurança, qualidade e ações do dia. Os quadros ajudam a enxergar a situação atual e agir durante o turno." },
+    { title: "1. Quadro de Pessoas", body: "Ajuda a visualizar como a equipe está organizada, quem está trabalhando, em qual turno cada pessoa atua e qual função ou operação realiza. Facilita entender a distribuição das pessoas e a cobertura das atividades." },
+    { title: "2. Escala", body: "Mostra a distribuição das pessoas conforme habilidades, treinamentos e necessidades das operações." },
+    { title: "3. Quadro de ocorrências", body: "Registra problemas identificados, causas conhecidas, ações tomadas e acompanhamentos necessários." },
+    { title: "4. Gráfico de gestão de retrabalho", body: "Permite acompanhar o retrabalho, perceber tendências e investigar causas para reduzir repetição de falhas." },
+    { title: "5. Produção diária", body: "Compara meta e resultado real. Exemplo da apostila: meta de 85 eixos e produção de 68; foram feitos 17 a menos e o atingimento da meta foi de 80%." },
+    { title: "6. Carta de controle da produção hora a hora", body: "Compara produção planejada e realizada ao longo do turno, permitindo perceber desvios e agir antes do fim do expediente." },
+    { title: "7. Segurança e Meio Ambiente", body: "Reforça orientações, riscos, ocorrências, cuidados ambientais e ações preventivas." },
+    { title: "8. Acompanhamento diário de retrabalho", body: "Acompanha diariamente as ocorrências de retrabalho, os motivos e as ações para evitar reincidência." },
+    { title: "9. Gerenciamento 8D", body: "Método estruturado de solução de problemas: definir o problema, conter o efeito, investigar a causa raiz, aplicar ações corretivas e verificar a eficácia. Exemplo da apostila: componente montado incorretamente e enviado ao cliente." },
+    { title: "OEE — Eficiência Global do Equipamento", body: "OEE vem de Overall Equipment Effectiveness. Considera três fatores: Disponibilidade × Desempenho × Qualidade. É uma medida da eficiência do equipamento/processo. Não confundir com o simples atingimento da meta de produção." },
+    { title: "Exemplo de atingimento da meta", body: "Meta: 85 eixos. Realizado: 68 eixos. Cálculo de atingimento: 68 ÷ 85 × 100 = 80%. Diferença: 17 eixos para a meta. A apostila alerta que este cálculo é atingimento da meta, não o OEE completo." }
+  ]},
+  { id: "etapa5-postos", icon: "🧰", title: "Etapa 5 — Postos específicos", level: "Intermediário", summary: "Submontagem, montagem de garfo e diferencial, BAREX e oficina.", lessons: [
+    { title: "Submontagem do eixo intermediário", body: "Utiliza a prensa 2605; há Poka-Yoke associado à máquina 2606; verifica a folga. Possui ARO e LPT próprios." },
+    { title: "Montagem do garfo", body: "Posto separado da submontagem do eixo intermediário." },
+    { title: "Montagem do diferencial", body: "Posto específico para montar os diferenciais; não é a mesma atividade da montagem do intermediário. Possui ARO e LPT próprios." },
+    { title: "Posto BAREX — dois postos de trabalho", body: "Destinado à preparação de eixos para Mercedes-Benz e Agrale, conforme os requisitos de cada cliente. O conjunto recebe diferencial, carcaça e semieixo acoplado. Nesse posto não são montados freio nem cubo; o semieixo é acoplado, não instalado como na montagem convencional. Conforme o requisito do cliente, pode acompanhar um kit separado com arruelas e demais acessórios necessários para fixar o semieixo. Alguns clientes não recebem o kit porque utilizam acessórios de outro fornecedor. O BAREX possui ARO e LPT." },
+    { title: "Observações BAREX — sequência de montagem", body: "Conferir na tela o Part Number, a sequência, os componentes, as operações e os Poka-Yokes solicitados." },
+    { title: "Observações BAREX — sistema Apriso", body: "Seguir a sequência indicada, sem pular ou antecipar operações; confirmar a conclusão de cada etapa antes de prosseguir." },
+    { title: "Observações BAREX — validação dos componentes", body: "Conferir se o componente corresponde ao Part Number solicitado e verificar quantidade, modelo e aplicação." },
+    { title: "Observações BAREX — Poka-Yokes", body: "Verificar os Poka-Yokes previstos e confirmar a validação no sistema. Nunca ignorar nem contornar um Poka-Yoke para liberar a operação." },
+    { title: "Oficina", body: "Realiza retrabalhos, ajustes e correções gerais." }
+  ]},
+  { id: "anexo-modelos-eixos", icon: "📑", title: "Anexo — Modelos de eixos MOE", level: "Consulta", summary: "Área reservada para preencher os modelos/códigos e suas aplicações.", lessons: [
+    { title: "Relação de modelos/códigos", body: "A apostila reserva este anexo para acrescentar posteriormente a relação dos modelos de eixos produzidos na MOE. A tabela tem as colunas “Modelo / código do eixo” e “Aplicação / observações”. As linhas estão vazias no documento original, portanto os modelos não são preenchidos por suposição." },
+    { title: "Nota sobre o material", body: "O material foi organizado com base nas anotações e correções reunidas. Termos internos e siglas foram mantidos conforme informados." }
+  ]}
+
 ];
 
 const axes = {
