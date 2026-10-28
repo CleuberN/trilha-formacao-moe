@@ -1,0 +1,21 @@
+.glassCard {
+  position: relative;
+  isolation: isolate;
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
+  box-shadow:
+    0 10px 28px rgba(18, 59, 93, 0.09),
+    inset 0 1px 0 rgba(255, 255, 255, 0.72);
+  color: #172536;
+  background-clip: padding-box;
+}
+
+/* Fallback: mantém o contraste quando o navegador não oferece backdrop-filter. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glassCard {
+    background: rgba(255, 255, 255, 0.96);
+  }
+}
