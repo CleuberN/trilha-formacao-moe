@@ -222,7 +222,7 @@ function App() {
           {view === "library" ? <>
             <span className="eyebrow">CONSULTA E RASTREABILIDADE</span><h1>Biblioteca Técnica</h1><p className="lead">Consulte os materiais disponíveis e confirme a aplicação antes de utilizar qualquer especificação.</p>
             <div className="source-alert"><strong>Importante</strong><p>Os manuais abaixo têm escopos diferentes. A presença de um documento na biblioteca não comprova que ele se aplica ao IVECO MS-23 ou à variante DAF MD em treinamento.</p></div>
-            <div className="resource-list">{modules.find(m => m.id === "biblioteca").lessons.map((l, i) => <article className="resource-card" key={l.title}><span className="resource-number">0{i + 1}</span><div><h3>{l.title}</h3><p>{l.body}</p><span className="resource-tag">Conteúdo de orientação</span></div></article>)}</div>
+            <div className="resource-list">{modules.find(m => m.id === "biblioteca").lessons.map((l, i) => <GlassCard as="article" className="resource-card" key={l.title}><span className="resource-number">0{i + 1}</span><div><h3>{l.title}</h3><p>{l.body}</p><span className="resource-tag">Conteúdo de orientação</span></div></GlassCard>)}</div>
           </> : <>
             {currentModule.id === "estrutura-moe" ? <Etapa5EstruturaReference /> : currentModule.id === "estacoes-moe" ? <EstacoesPostosReference /> : <>
 <div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
