@@ -223,7 +223,8 @@ function App() {
             <div className="source-alert"><strong>Importante</strong><p>Os manuais abaixo têm escopos diferentes. A presença de um documento na biblioteca não comprova que ele se aplica ao IVECO MS-23 ou à variante DAF MD em treinamento.</p></div>
             <div className="resource-list">{modules.find(m => m.id === "biblioteca").lessons.map((l, i) => <article className="resource-card" key={l.title}><span className="resource-number">0{i + 1}</span><div><h3>{l.title}</h3><p>{l.body}</p><span className="resource-tag">Conteúdo de orientação</span></div></article>)}</div>
           </> : <>
-            <div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
+            {currentModule.id === "estrutura-moe" ? <Etapa5EstruturaReference /> : <>
+<div className="lesson-breadcrumb"><button onClick={() => setView("home")}>Início</button><span>/</span><span>{currentModule.title}</span></div>
             <div className="lesson-title-row"><div><span className="eyebrow">{currentModule.level.toUpperCase()} · {currentModule.lessons.length} AULAS</span><h1>{currentModule.title}</h1><p className="lead">{currentModule.summary}</p></div><span className="large-module-icon">{currentModule.icon}</span></div>
             {currentModule.id === "moe" && <div className="axis-context"><strong>Treinamento selecionado: {axes[axis].title}</strong><p>{axes[axis].note}</p></div>}
             {currentModule.id === "organograma" && <OrganogramaVisual />}
@@ -236,6 +237,7 @@ function App() {
               <aside className="lesson-outline"><h3>Nesta aula</h3>{currentModule.lessons.map((l, i) => <button key={l.title} onClick={() => setActiveLesson(i)} className={i === activeLesson ? "outline-item active" : "outline-item"}><span>{completed.includes(currentModule.id + ":" + i) ? "✓" : String(i + 1).padStart(2, "0")}</span>{l.title}</button>)}<div className="outline-note"><strong>Material de apoio</strong><p>Use os manuais e procedimentos aprovados para confirmar dados específicos do modelo.</p><button onClick={() => setView("library")}>Abrir biblioteca →</button></div></aside>
             </div>
             {currentModule.id === "quiz" && <div className="quiz-note"><strong>Revisão rápida</strong><p>As respostas esperadas estão explicadas em cada pergunta. A versão avaliativa com pontuação será uma próxima melhoria.</p></div>}
+</>}
           </>}
         </div>
       </section>}
@@ -245,6 +247,34 @@ function App() {
   );
 }
 
+
+function Etapa5EstruturaReference() {
+  const stations = [
+    ["Estação 10", "Preparação da carcaça para instalação do diferencial."],
+    ["Estação 20", "Validação do diferencial e posicionamento na carcaça."],
+    ["Estação 30", "Fixação do diferencial na carcaça, posicionamento para paleteira, início da montagem e montagem do intermediário conforme a sequência registrada."],
+    ["Estação 40", "Posicionamento e fixação do freio do lado esquerdo (LE)."],
+    ["Estação 50", "Instalação do ABS e fixação do LOG no lado esquerdo (LE). Inclui submontagem do ABS e possível LPT."],
+    ["Estação 60", "Posicionamento e fixação do freio do lado direito (LD)."],
+    ["Estação 70", "Instalação do ABS e fixação do LOG no lado direito (LD). Inclui submontagem do ABS e possível LPT."],
+    ["Estação 80", "Montagem do cubo e das travas no lado direito (LD)."],
+    ["Estação 90", "Montagem do cubo e das travas no lado esquerdo (LE)."],
+  ];
+  return (
+    <article className="etapa5-reference">
+      <h1>ETAPA 5 · ESTRUTURA DA MOE</h1>
+      <p className="etapa5-subtitle">A linha é acompanhada pelo Apriso FlexNet, conforme a sequência de produção.</p>
+      <section className="etapa5-siglas">
+        <h2>Siglas importantes</h2>
+        <p>ARO = Análise de Risco Operacional. LPT = Liberação do Posto de Trabalho.</p>
+      </section>
+      <section className="etapa5-stations-reference">
+        <h2>Estações da linha</h2>
+        <div>{stations.map(([name, description]) => <p key={name}><strong>{name}</strong> — {description}</p>)}</div>
+      </section>
+    </article>
+  );
+}
 
 function Etapa5StationList() {
   const stations = [
