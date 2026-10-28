@@ -227,6 +227,7 @@ function App() {
             <div className="lesson-title-row"><div><span className="eyebrow">{currentModule.level.toUpperCase()} · {currentModule.lessons.length} AULAS</span><h1>{currentModule.title}</h1><p className="lead">{currentModule.summary}</p></div><span className="large-module-icon">{currentModule.icon}</span></div>
             {currentModule.id === "moe" && <div className="axis-context"><strong>Treinamento selecionado: {axes[axis].title}</strong><p>{axes[axis].note}</p></div>}
             {currentModule.id === "organograma" && <OrganogramaVisual />}
+            {currentModule.id === "etapa5-postos" && <Etapa5StationList />}
             <div className="lesson-content-grid">
               <div className="lesson-reader"><div className="lesson-meta"><span>AULA {String(activeLesson + 1).padStart(2, "0")}</span><span>{completed.includes(currentModule.id + ":" + activeLesson) ? "✓ Concluída" : "Em andamento"}</span></div><h2>{currentLesson.title}</h2><p>{currentLesson.body}</p>
                 <div className="learning-tip"><span>💡</span><div><strong>Prática recomendada</strong><p>Consulte a instrução de trabalho vigente e tire dúvidas com a liderança antes de executar uma operação real.</p></div></div>
@@ -245,85 +246,86 @@ function App() {
 }
 
 
-function OrganogramaVisual() {
-  const groups = [
-    { title: "Direção de Operações", people: [{ name: "Jorge Silveira", role: "Diretor de Operações — América do Sul" }] },
-    { title: "Gerências", people: [
-      { name: "Gerardo Rodrigues", role: "Gerente da Montagem" },
-      { name: "Alessandro T. Shiota", role: "Gerente de Industrialização" }
-    ] },
-    { title: "Supervisão", people: [{ name: "Roberto", role: "Supervisor de Fabricação / Montagem" }] },
-  ];
-  const leaders = [
-    { name: "Bruno", area: "MOE e MDX", shift: "Manhã · 1º turno", color: "gold" },
-    { name: "Anderson", area: "MOP", shift: "Manhã · 1º turno", color: "green" },
-    { name: "Renato", area: "MOD / MDC", shift: "Manhã · 1º turno", color: "blue" },
-    { name: "Clécio", area: "MDC, MOD, MOE e MOP", shift: "Noite · 3º turno", color: "pink" },
-  ];
-  const owners = [
-    { name: "Samuel Gigna*", area: "MOE", color: "gold" },
-    { name: "Kleiton Santos", area: "MOP", color: "green" },
-    { name: "Alex Cardoso", area: "MOD / MDC", color: "blue" },
-    { name: "Samuel Guerra", area: "MDX", color: "pink" },
-    { name: "Kleiton Santos", area: "Oficina / Workshop", color: "purple" },
-  ];
-  const areas = [
-    ["MOE", "Montagem de Eixos"],
-    ["MOP", "Montagem de Peças"],
-    ["MOD", "Montagem do Diferencial"],
-    ["MDC", "Montagem da Carcaça"],
-    ["MDX", "Montagem do Eixo Intermediário"],
-    ["Oficina / Workshop", "Ajustes, retrabalhos e correções em geral"],
+function Etapa5StationList() {
+  const stations = [
+    ["Estação 10", "Preparação da carcaça para instalação do diferencial."],
+    ["Estação 20", "Validação do diferencial e posicionamento na carcaça."],
+    ["Estação 30", "Fixação do diferencial na carcaça, posicionamento para paleteira, início da montagem e montagem do intermediário conforme a sequência registrada."],
+    ["Estação 40", "Posicionamento e fixação do freio do lado esquerdo (LE)."],
+    ["Estação 50", "Instalação do ABS e fixação do LOG no lado esquerdo (LE). Inclui submontagem do ABS e possível LPT."],
+    ["Estação 60", "Posicionamento e fixação do freio do lado direito (LD)."],
+    ["Estação 70", "Instalação do ABS e fixação do LOG no lado direito (LD). Inclui submontagem do ABS e possível LPT."],
+    ["Estação 80", "Montagem do cubo e das travas no lado direito (LD)."],
+    ["Estação 90", "Montagem do cubo e das travas no lado esquerdo (LE)."],
   ];
   return (
-    <section className="org-chart" aria-label="Organograma visual da montagem MOE">
-      <div className="org-intro">
-        <span className="eyebrow">ESTRUTURA ORGANIZACIONAL</span>
-        <h2>Organograma da Montagem</h2>
-        <p>MOE — Montagem de Eixos</p>
-        <span className="org-validation">Rascunho para validação interna</span>
+    <section className="stage5-stations" aria-label="Estações da linha">
+      <h2>Estações da linha</h2>
+      <div className="stage5-station-list">
+        {stations.map(([name, detail]) => <p key={name}><strong>{name}</strong> — {detail}</p>)}
       </div>
-      <div className="org-hierarchy">
-        {groups.map((group, index) => <div className="org-level" key={group.title}>
-          {index > 0 && <div className="org-connector" aria-hidden="true" />}
-          <div className={index === 0 ? "org-person org-director" : index === 1 ? "org-person org-manager" : "org-person org-supervisor"}>
-            <span className="org-person-icon" aria-hidden="true">●</span>
-            <div><span className="org-role-label">{group.title}</span>{group.people.map(person => <div key={person.name}><strong>{person.name}</strong><span>{person.role}</span></div>)}</div>
-          </div>
-        </div>)}
-        <div className="org-connector" aria-hidden="true" />
-        <section className="org-team-section">
-          <h3>Líderes de turno</h3>
-          <div className="org-people-grid org-leaders">{leaders.map(person => <article className={"org-team-card " + person.color} key={person.name}>
-            <strong>{person.name}</strong><span>{person.area}</span><small>{person.shift}</small>
-          </article>)}</div>
+      <aside className="stage5-additional">
+        <h3>Postos específicos e controles complementares</h3>
+        <p><strong>Submontagem do eixo intermediário</strong> — prensa 2605, controle Poka-Yoke na máquina 2606 e verificação de folga; possui ARO e LPT próprios.</p>
+        <p><strong>Montagem do garfo e do diferencial</strong> — postos separados, cada um com seus requisitos e controles de ARO/LPT.</p>
+        <p><strong>BAREX</strong> — conferir no Apriso o Part Number, a sequência, os componentes, as operações e os Poka-Yokes. Não ignorar nem contornar controles de erro.</p>
+        <p><strong>Oficina</strong> — retrabalhos, ajustes e correções gerais.</p>
+      </aside>
+    </section>
+  );
+}
+
+function OrganogramaVisual() {
+  const leaders = [
+    { name: "Bruno", role: "1º turno — MOE e MDX" },
+    { name: "Anderson", role: "1º turno — MOP" },
+    { name: "Renato", role: "1º turno — MDC e MOD" },
+    { name: "Clécio", role: "3º turno — MDC, MOD, MOE e MOP" },
+  ];
+  return (
+    <section className="org-chart reference-org" aria-label="Organograma da montagem">
+      <header className="reference-org-heading">
+        <h2>ETAPA 1 — ORGANOGRAMA DA MONTAGEM</h2>
+        <p>Caixas e ligações hierárquicas, com nomes apresentados um abaixo do outro.</p>
+      </header>
+      <div className="reference-org-canvas">
+        <div className="reference-org-box director"><strong>Jorge Silva</strong><span>Diretor de Operações</span></div>
+        <div className="reference-org-branch"><span /></div>
+        <div className="reference-org-managers">
+          <div className="reference-org-box manager-green"><strong>Geraldo Rodrigues</strong><span>Gerente da Montagem</span></div>
+          <div className="reference-org-box manager-purple"><strong>Alessandro T. Shiota</strong><span>Gerente da Industrialização</span></div>
+        </div>
+        <div className="reference-org-stem"><span /></div>
+        <div className="reference-org-box supervisor"><strong>Robert</strong><span>Supervisor de Manufatura / Montagem</span></div>
+        <div className="reference-org-team-line" aria-hidden="true"><i /><i /><i /><i /></div>
+        <div className="reference-org-coordinators">
+          <div className="reference-org-box coord-purple"><strong>Samuel Tigre</strong><span>Coordenador/engenheiro — MOE</span></div>
+          <div className="reference-org-box coord-purple"><strong>Kleiton Santos</strong><span>Coordenador/engenheiro — MOP e Oficina</span></div>
+          <div className="reference-org-box coord-purple"><strong>Alex Cardas</strong><span>Coordenador/engenheiro — MOD e MDC</span></div>
+          <div className="reference-org-box coord-purple"><strong>Samuel Guerra</strong><span>Coordenador/engenheiro — MDX</span></div>
+        </div>
+        <div className="reference-org-downline"><span /></div>
+        <section className="reference-org-panel leaders-panel">
+          <h3>LÍDERES POR TURNO</h3>
+          {leaders.map(person => <p key={person.name}><span>{person.role.split(" — ")[0]}</span> — {person.role.split(" — ")[1]}</p>)}
         </section>
-        <div className="org-connector" aria-hidden="true" />
-        <section className="org-team-section org-tech-section">
-          <h3>Responsáveis técnicos por área</h3>
-          <div className="org-people-grid org-owners">{owners.map(person => <article className={"org-team-card " + person.color} key={person.name + person.area}>
-            <strong>{person.name}</strong><span>{person.area}</span>
-          </article>)}</div>
+        <div className="reference-org-downline"><span /></div>
+        <section className="reference-org-panel quality-panel">
+          <h3>QUALIDADE DA MONTAGEM</h3>
+          <p>Responde diretamente a Robert</p>
+          <p>Edinaldo Luz</p>
+          <p>Jasiel Claro (diurno)</p>
+          <p>João Vitor (noturno)</p>
+        </section>
+        <div className="reference-org-downline"><span /></div>
+        <section className="reference-org-panel safety-panel">
+          <h3>SEGURANÇA — SESMT / HSE</h3>
+          <p>Sandro Araújo • Carina Moreira</p>
+          <p>Ricardo Santos • Vanderlei Souza</p>
+          <p>Nara Szczygiel</p>
         </section>
       </div>
-      <div className="org-details-grid">
-        <section className="org-detail-panel">
-          <h3>Áreas da montagem</h3>
-          <dl>{areas.map(([sigla, description]) => <div key={sigla}><dt>{sigla}</dt><dd>{description}</dd></div>)}</dl>
-        </section>
-        <section className="org-detail-panel">
-          <h3>Responsabilidades principais</h3>
-          <dl>
-            <div><dt>Diretoria</dt><dd>Direção estratégica da operação.</dd></div>
-            <div><dt>Gerências</dt><dd>Gestão da montagem e da industrialização.</dd></div>
-            <div><dt>Supervisão</dt><dd>Coordenação da manufatura e da montagem.</dd></div>
-            <div><dt>Líderes de turno</dt><dd>Distribuição da equipe e acompanhamento da produção.</dd></div>
-            <div><dt>Responsáveis técnicos</dt><dd>Apoio técnico à linha, segurança, qualidade e solução de problemas.</dd></div>
-            <div><dt>Oficina / Workshop</dt><dd>Ajustes, retrabalhos e correções, conforme a necessidade.</dd></div>
-          </dl>
-        </section>
-      </div>
-      <p className="org-footnote">* A grafia de “Samuel Gigna” e os nomes, cargos, áreas, turnos e relações hierárquicas devem ser confirmados com a liderança. As anotações também citam “Josiel Claro” e “João”, sem informação suficiente para atribuir cargos.</p>
+      <p className="reference-org-note">Organograma didático conforme a referência visual fornecida. Confirme grafia e atribuições com a liderança antes do uso como documento oficial.</p>
     </section>
   );
 }
