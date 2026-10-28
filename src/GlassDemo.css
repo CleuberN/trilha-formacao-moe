@@ -1,0 +1,15 @@
+.glassDemoPage{min-height:100vh;padding:clamp(24px,5vw,64px) 20px;color:#172536;font-family:"DM Sans",Arial,sans-serif}
+.glassDemoInner{width:min(100%,780px);margin:0 auto}
+.glassDemoEyebrow{margin:0 0 10px;color:#176b75;font-size:12px;font-weight:800;letter-spacing:.14em}
+.glassDemoInner>h1{margin:0 0 10px;color:#123b5d;font-size:clamp(28px,4vw,42px)}
+.glassDemoLead{margin:0 0 28px;line-height:1.7;color:#3d5670}
+.glassDemoCard{padding:clamp(20px,4vw,30px);margin-top:18px}
+.glassDemoBadge{display:inline-flex;border-radius:999px;padding:6px 10px;background:rgba(18,59,93,.08);color:#123b5d;font-size:10px;font-weight:800;letter-spacing:.08em}
+.glassDemoCard h2{margin:16px 0 10px;color:#123b5d;font-size:22px;line-height:1.35}
+.glassDemoCard p{line-height:1.75}
+.glassDemoOptions{display:grid;gap:10px;margin-top:18px}
+.glassDemoOption{display:flex;gap:10px;align-items:flex-start;border:1px solid rgba(18,59,93,.12);border-radius:10px;padding:12px;background:rgba(255,255,255,.45);cursor:pointer;line-height:1.5}
+.glassDemoOption.selected{background:rgba(25,169,116,.12);border-color:rgba(25,169,116,.5)}
+.glassDemoOption input{margin-top:4px;accent-color:#137e68}
+.glassDemoFeedback{margin-top:14px;border-radius:9px;padding:10px 12px;background:rgba(255,138,0,.12)}
+.glassDemoFeedback.correct{background:rgba(25,169,116,.12)}
