@@ -309,3 +309,10 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
  .etapa5-stations-reference h2{font-size:20px}
  .etapa5-stations-reference p{font-size:13px;line-height:1.55}
 }
+
+/* Ajustes para o módulo de estações e postos no mesmo padrão da referência */
+.estacoes-postos-reference>h1{font-size:30px}
+.estacoes-postos-reference .etapa5-stations-reference{margin-top:0}
+.estacoes-postos-reference .estacoes-extra{margin-top:22px}
+.estacoes-postos-reference .estacoes-extra h2{margin-bottom:8px}
+.estacoes-postos-reference .estacoes-extra p{margin-bottom:7px}
