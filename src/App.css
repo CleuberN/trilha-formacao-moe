@@ -532,3 +532,85 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
 }
+
+
+/* RESPONSIVIDADE MOBILE — ocupa toda a tela e evita faixa vazia lateral */
+html, body, #root {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+}
+body { overflow-x: hidden; }
+.app.glassPageBackground {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+@media (max-width: 700px) {
+  .app.glassPageBackground {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+    overflow-x: clip;
+  }
+  .topbar {
+    width: 100%;
+    min-width: 0;
+    gap: 8px;
+  }
+  .topbar nav { flex-shrink: 0; gap: 3px; }
+  .topbar nav button { white-space: nowrap; }
+  .hero {
+    width: 100%;
+    min-width: 0;
+    aspect-ratio: auto;
+    min-height: 0;
+    padding: 22px 18px;
+    background-position: 62% center;
+  }
+  .hero h1 { font-size: clamp(22px, 6vw, 29px); overflow-wrap: anywhere; }
+  .hero p { max-width: 100%; }
+  .hero-tags { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-tags span { min-width: 0; overflow-wrap: anywhere; }
+  .section-block { width: 100%; min-width: 0; margin: 28px 0; }
+  .section-heading { width: 100%; }
+  .section-heading > p { max-width: none; }
+  .axis-grid { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .axis-card {
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 22px;
+    overflow: hidden;
+  }
+  .axis-image { width: 100%; height: clamp(150px, 48vw, 230px); min-height: 0; flex: none; }
+  .axis-copy { width: 100%; min-width: 0; padding: 18px; }
+  .axis-copy h3 { font-size: 21px; overflow-wrap: anywhere; }
+  .axis-copy p { font-size: 13px; }
+  .axis-copy .primary-btn { max-width: 100%; }
+  .progress-panel { width: 100%; min-width: 0; grid-template-columns: minmax(0, 1fr) auto; padding: 18px; }
+  .module-grid { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+  .module-card { min-width: 0; padding: 13px; overflow-wrap: anywhere; }
+  .learning-layout { width: 100%; min-width: 0; display: block; }
+  .lesson-main, .learning-sidebar { width: 100%; min-width: 0; }
+  .lesson-title-row { min-width: 0; }
+  .lesson-title-row > div { min-width: 0; }
+  .lesson-main h1 { overflow-wrap: anywhere; }
+  .lesson-content-grid { grid-template-columns: minmax(0, 1fr); }
+  .lesson-reader, .lesson-outline, .resource-card { min-width: 0; }
+  .etapa5-reference { width: 100%; min-width: 0; overflow-wrap: anywhere; }
+  .footer { width: 100%; }
+}
+@media (max-width: 380px) {
+  .app.glassPageBackground { padding-left: 12px; padding-right: 12px; }
+  .brand { font-size: 15px; }
+  .topbar nav button { padding: 7px 6px; font-size: 10px; }
+  .hero { padding: 18px 14px; }
+  .hero-tags { grid-template-columns: minmax(0, 1fr); }
+  .hero-tags span:last-child:nth-child(odd) { grid-column: auto; justify-self: stretch; }
+  .module-grid { grid-template-columns: minmax(0, 1fr); }
+}
