@@ -44,6 +44,12 @@ const modules = [
     { title: "Pergunta 1", body: "Antes de aplicar um torque de montagem, qual é a melhor atitude? Consulte a instrução aprovada para o modelo e a variante." },
     { title: "Pergunta 2", body: "Uma inspeção visual substitui todas as medições especificadas? Não. Cada controle obrigatório deve ser realizado conforme o procedimento." },
     { title: "Pergunta 3", body: "É seguro usar um procedimento de eixo 18X em um eixo 17X sem validação? Não. Os documentos e procedimentos devem ser mantidos separados até confirmar a aplicação." }
+  ]},
+  { id: "organograma", icon: "🧭", title: "Organograma da Montagem", level: "Consulta", summary: "Consulte a estrutura organizacional e os responsáveis por área e turno.", lessons: [
+    { title: "Estrutura de liderança", body: "Diretoria de Operações — Jorge Silveira (confirmar nome e cargo). Gerência de Montagem — Gerardo Rodrigues (confirmar). Gerência de Industrialização — Alessandro T. Shiota (confirmar). Supervisão de Fabricação/Montagem — Roberto (confirmar sobrenome e cargo). Estas informações foram transcritas de anotações e precisam ser validadas antes do uso oficial." },
+    { title: "Lideranças por turno", body: "Anotações disponíveis mencionam Bruno (MOE e MDX, turno da manhã/1º turno), Anderson (MOP, manhã/1º turno), Renato (MOD/MDC, manhã/1º turno) e Clécio (MDC, MOD, MOE e MOP, turno da noite/3º turno). Confirmar as áreas, siglas e atribuições com a liderança atual." },
+    { title: "Responsáveis técnicos por área", body: "As anotações mencionam Samuel Gigna (MOE — grafia a confirmar), Kleiton Santos (MOP e Workshop), Alex Cardoso (MOD/MDC) e Samuel Guerra (MDX). Também aparecem os nomes Josiel Claro e João, sem contexto suficiente para atribuir uma função. Validar todos os nomes e responsabilidades antes de considerar este conteúdo oficial." },
+    { title: "Como consultar", body: "Use esta página como rascunho de consulta, não como organograma oficial aprovado. Confirme a estrutura atual, os nomes, cargos, turnos e siglas com a gestão da montagem antes de compartilhar ou utilizar para encaminhamentos." }
   ]}
 ];
 
