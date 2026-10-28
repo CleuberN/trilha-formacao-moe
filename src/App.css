@@ -291,3 +291,21 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
  .reference-org-panel p{font-size:9px}
  .stage5-station-list p,.stage5-additional p{font-size:13px}
 }
+
+/* Etapa 5 — reprodução fiel da referência fornecida */
+.etapa5-reference{width:100%;box-sizing:border-box;margin:0;padding:0 0 24px;color:#263e57;font-family:Arial,Helvetica,sans-serif;background:#fff}
+.etapa5-reference>h1{font:700 30px/1.2 Arial,Helvetica,sans-serif;letter-spacing:.1px;color:#263e57;margin:0 0 11px;padding:0}
+.etapa5-reference .etapa5-subtitle{font:16px/1.5 Arial,Helvetica,sans-serif;color:#263e57;margin:0 0 18px}
+.etapa5-siglas{margin:0 -9px 21px;border:1px solid #d7e3ed;background:#edf3f8;box-sizing:border-box}
+.etapa5-siglas h2{font:700 16px/1.3 Arial,Helvetica,sans-serif;color:#263e57;margin:0;padding:10px 14px;border-bottom:1px solid #d7e3ed}
+.etapa5-siglas p{font:14px/1.5 Arial,Helvetica,sans-serif;color:#263e57;margin:0;padding:8px 14px}
+.etapa5-stations-reference h2{font:700 21px/1.3 Arial,Helvetica,sans-serif;color:#2b7b80;margin:0 0 7px}
+.etapa5-stations-reference p{font:14px/1.55 Arial,Helvetica,sans-serif;color:#263e57;margin:0 0 4px}
+.etapa5-stations-reference strong{font-weight:700}
+@media(max-width:700px){
+ .etapa5-reference>h1{font-size:25px;line-height:1.2}
+ .etapa5-reference .etapa5-subtitle{font-size:14px}
+ .etapa5-siglas{margin-left:-5px;margin-right:-5px}
+ .etapa5-stations-reference h2{font-size:20px}
+ .etapa5-stations-reference p{font-size:13px;line-height:1.55}
+}
