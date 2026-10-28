@@ -230,3 +230,11 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
  .org-detail-panel dt,.org-detail-panel dd{font-size:13px;line-height:1.6}
  .org-footnote{font-size:13px}
 }
+
+
+/* Módulos complementares baseados nas folhas de formação MOE */
+.source-alert{border-left:4px solid #e6a23c;background:#fff8e8;border-radius:8px;padding:14px 16px;margin:16px 0;color:#5c4b2b}
+.source-alert strong{display:block;margin-bottom:5px}
+.source-alert p{margin:0;line-height:1.6}
+.lesson-reader>p{font-size:16px;line-height:1.85;white-space:pre-line}
+@media(max-width:600px){.lesson-reader>p{font-size:15px;line-height:1.8}.source-alert{padding:12px}}
