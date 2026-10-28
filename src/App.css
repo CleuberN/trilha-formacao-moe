@@ -14,7 +14,7 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 .topbar nav{display:flex;gap:8px}
 .topbar nav button{border:0;background:transparent;color:#657487;padding:10px 15px;border-radius:8px;font-weight:600}
 .topbar nav button:hover,.topbar nav .nav-active{background:#E5EEF5;color:#123B5D}
-.hero{margin:26px 0 44px;background:linear-gradient(90deg,rgba(3,25,45,.74) 0%,rgba(3,25,45,.48) 36%,rgba(3,25,45,.08) 64%,rgba(3,25,45,0) 100%),url("/images/moe-banner.jpg") center center/100% 100% no-repeat;border-radius:18px;color:#fff;padding:47px 52px;position:relative;overflow:hidden;min-height:330px;aspect-ratio:3/1;box-shadow:0 18px 40px #123b5d1a}
+.hero{margin:22px 0 32px;background:linear-gradient(90deg,rgba(3,25,45,.82) 0%,rgba(3,25,45,.55) 38%,rgba(3,25,45,.10) 68%,rgba(3,25,45,0) 100%),url("/images/moe-banner.jpg") center center/cover no-repeat;border-radius:16px;color:#fff;padding:32px 40px;position:relative;overflow:hidden;min-height:230px;aspect-ratio:3.5/1;box-shadow:0 12px 28px #123b5d16}
 .hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(4,24,44,.08),transparent 58%)}
 .eyebrow{font-size:10px;font-weight:800;letter-spacing:1.6px;color:#6382a0}
 .hero .eyebrow{color:#a9d5f8}
