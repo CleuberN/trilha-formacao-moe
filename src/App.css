@@ -355,3 +355,6 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
  .glassCard.glassCard { background: rgba(255,255,255,.96); }
 }
+
+/* Cartões de consulta também usam a superfície de vidro */
+.glassCard.resource-card { background: rgba(255,255,255,.74); }
