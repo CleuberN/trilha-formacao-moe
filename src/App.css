@@ -358,3 +358,177 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 
 /* Cartões de consulta também usam a superfície de vidro */
 .glassCard.resource-card { background: rgba(255,255,255,.74); }
+
+
+/* DARK GLASSMORPHISM — identidade visual principal da Trilha Formação MOE */
+:root {
+  color-scheme: dark;
+  --moe-bg: #0b071e;
+  --moe-bg-alt: #110c26;
+  --moe-text: #f8fafc;
+  --moe-muted: #cbd5e1;
+  --moe-muted-soft: #94a3b8;
+  --moe-line: rgba(255,255,255,.10);
+  --moe-glass: rgba(255,255,255,.03);
+  --moe-pink: #ff2a74;
+  --moe-orange: #ff6a00;
+  --moe-purple: #8b5cf6;
+  --moe-magenta: #d946ef;
+}
+html { background: var(--moe-bg); }
+body {
+  background: var(--moe-bg);
+  color: var(--moe-text);
+}
+.app.glassPageBackground {
+  max-width: 100%;
+  min-height: 100vh;
+  padding-left: max(24px, calc((100vw - 1372px)/2));
+  padding-right: max(24px, calc((100vw - 1372px)/2));
+  color: var(--moe-text);
+  background:
+    radial-gradient(ellipse at 9% 8%, rgba(255,42,116,.19), transparent 28%),
+    radial-gradient(ellipse at 88% 13%, rgba(139,92,246,.22), transparent 30%),
+    radial-gradient(ellipse at 76% 58%, rgba(217,70,239,.10), transparent 26%),
+    radial-gradient(ellipse at 28% 90%, rgba(255,106,0,.12), transparent 30%),
+    linear-gradient(135deg, #0b071e 0%, #110c26 55%, #0b071e 100%);
+  isolation: isolate;
+  overflow: clip;
+}
+.app.glassPageBackground:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 320px;
+  height: 320px;
+  top: 320px;
+  left: -150px;
+  border-radius: 50%;
+  background: rgba(255,42,116,.30);
+  filter: blur(70px);
+}
+.app.glassPageBackground:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 360px;
+  height: 360px;
+  top: 720px;
+  right: -170px;
+  border-radius: 50%;
+  background: rgba(139,92,246,.25);
+  filter: blur(80px);
+}
+.topbar { border-bottom-color: var(--moe-line); }
+.brand { color: #fff; }
+.brand:before { background: linear-gradient(135deg,var(--moe-pink),var(--moe-purple)); box-shadow: 0 0 28px rgba(255,42,116,.25); }
+.brand span { color: var(--moe-muted-soft); border-left-color: var(--moe-line); }
+.topbar nav button { color: var(--moe-muted); }
+.topbar nav button:hover,.topbar nav .nav-active {
+  color: #fff;
+  background: rgba(255,255,255,.07);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+.eyebrow { color: #e879f9; }
+.hero {
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 28px;
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.6), 0 0 45px rgba(139,92,246,.10);
+}
+.hero .eyebrow { color: #f9a8d4; }
+.hero-tags span { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.13); }
+.section-heading h2,.progress-copy h2 { color: #fff; }
+.section-heading>p,.progress-copy p { color: var(--moe-muted-soft); }
+.module-count { color: #e2e8f0; background: rgba(255,255,255,.06); border: 1px solid var(--moe-line); }
+.axis-card,.progress-panel,.module-card,.lesson-outline,.sidebar-progress,.search-box,
+.reference-org,.reference-org-heading,.etapa5-reference {
+  background: rgba(255,255,255,.025);
+  color: var(--moe-text);
+  border-color: var(--moe-line);
+  -webkit-backdrop-filter: blur(25px);
+  backdrop-filter: blur(25px);
+  box-shadow: 0 25px 50px -12px rgba(0,0,0,.6), inset 0 1px 0 rgba(255,255,255,.035);
+}
+.axis-card { border-radius: 26px; }
+.axis-image { background: rgba(255,255,255,.04); }
+.axis-copy h3,.module-card strong,.lesson-main h1,.lesson-reader h2,
+.learning-sidebar h2,.lesson-outline h3,.axis-copy h3 { color: #f8fafc; }
+.axis-copy p,.module-card small,.lead,.lesson-breadcrumb,
+.back-link,.lesson-reader>p,.lesson-meta,.lesson-outline,.outline-item,
+.reference-org-heading p,.reference-org-note,.etapa5-reference .etapa5-subtitle,
+.etapa5-stations-reference p { color: var(--moe-muted); }
+.status-pill { color: #f0abfc; background: rgba(217,70,239,.12); border: 1px solid rgba(217,70,239,.22); }
+.primary-btn { background: linear-gradient(110deg,var(--moe-pink),var(--moe-orange)); color: #fff; box-shadow: 0 8px 26px rgba(255,42,116,.20); }
+.primary-btn:hover { background: linear-gradient(110deg,#f01868,#ea580c); }
+.secondary-btn { color: #f8fafc; background: rgba(255,255,255,.08); border: 1px solid var(--moe-line); }
+.progress-track { background: rgba(255,255,255,.10); }
+.progress-track div { background: linear-gradient(90deg,var(--moe-pink),var(--moe-purple)); }
+.module-card { border-radius: 24px; transition: transform .2s ease,border-color .2s ease,background .2s ease,box-shadow .2s ease; }
+.module-card:hover { transform: translateY(-4px); background: rgba(255,255,255,.055); border-color: rgba(217,70,239,.38); box-shadow: 0 25px 50px -12px rgba(0,0,0,.6),0 0 28px rgba(139,92,246,.12); }
+.module-icon,.large-module-icon { background: linear-gradient(135deg,rgba(255,42,116,.18),rgba(139,92,246,.22)); border: 1px solid rgba(255,255,255,.09); }
+.module-number { color: #e879f9; }
+.module-link { color: #f0abfc; }
+.footer { border-top-color: var(--moe-line); color: var(--moe-muted-soft); }
+.footer strong { color: #fff; }
+.footer button,.lesson-breadcrumb button,.outline-note button { color: #f0abfc; }
+.learning-layout { gap: 36px; }
+.learning-sidebar { border-right-color: var(--moe-line); }
+.search-box { border-radius: 14px; }
+.search-box input { color: #fff; }
+.search-box input::placeholder { color: #94a3b8; }
+.side-module { color: #cbd5e1; }
+.side-module small { color: #94a3b8; }
+.side-module:hover,.side-module.selected { background: rgba(217,70,239,.10); color: #fff; box-shadow: inset 0 0 0 1px rgba(217,70,239,.20); }
+.sidebar-progress { border-radius: 18px; }
+.sidebar-progress>div:first-child { color: #cbd5e1; }
+.sidebar-progress strong { color: #f0abfc; }
+.lesson-title-row { gap: 20px; }
+.lesson-content-grid { gap: 20px; }
+.lesson-reader { border-radius: 28px; padding: clamp(22px,3vw,34px); }
+.lesson-meta span:last-child { color: #86efac; }
+.learning-tip,.outline-note,.source-alert,.stage5-additional {
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--moe-line);
+  border-radius: 18px;
+  color: #e2e8f0;
+}
+.learning-tip strong,.outline-note strong { color: #f0abfc; }
+.learning-tip p,.outline-note p { color: #cbd5e1; }
+.lesson-outline { border: 1px solid var(--moe-line); border-radius: 22px; padding: 18px; }
+.outline-item { border-radius: 12px; }
+.outline-item.active { background: rgba(139,92,246,.15); color: #fff; border: 1px solid rgba(139,92,246,.28); }
+.outline-item span { color: #f0abfc; }
+.lesson-actions { gap: 14px; }
+.lesson-pagination button { color: #e2e8f0; }
+.lesson-pagination button:disabled { color: #64748b; }
+.glassCard.quiz-note,.glassCard.resource-card { background: rgba(255,255,255,.025); }
+.resource-card h3,.resource-card p,.resource-card .resource-tag { color: #e2e8f0; }
+.resource-number { color: #f0abfc; }
+.source-alert { border-left: 4px solid var(--moe-orange); }
+.reference-org-heading h2,.reference-org-box strong,.reference-org-box span,
+.reference-org-panel h3,.reference-org-panel p,.etapa5-reference>h1,
+.etapa5-siglas h2,.etapa5-siglas p,.etapa5-stations-reference h2,
+.etapa5-stations-reference p,.etapa5-stations-reference strong,
+.stage5-stations h2,.stage5-station-list p,.stage5-additional p,
+.stage5-additional h3 { color: #e2e8f0; }
+.reference-org-box,.reference-org-panel,.etapa5-siglas { border-color: var(--moe-line); }
+.reference-org-box.director,.reference-org-box.manager-green,.reference-org-box.manager-purple,
+.reference-org-box.coord-purple,.reference-org-box.supervisor,.reference-org-panel.leaders-panel,
+.reference-org-panel.quality-panel,.reference-org-panel.safety-panel {
+  background: rgba(255,255,255,.035);
+}
+.etapa5-siglas,.stage5-additional { background: rgba(255,255,255,.035); }
+.etapa5-stations-reference h2,.stage5-stations h2 { color: #f0abfc; }
+@media (max-width: 900px) {
+  .app.glassPageBackground { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 600px) {
+  .app.glassPageBackground { padding-left: 14px; padding-right: 14px; }
+  .hero { border-radius: 22px; padding: 23px 20px; }
+  .lesson-reader { border-radius: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *,*::before,*::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
