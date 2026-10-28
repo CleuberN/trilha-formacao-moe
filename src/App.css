@@ -316,3 +316,21 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 .estacoes-postos-reference .estacoes-extra{margin-top:22px}
 .estacoes-postos-reference .estacoes-extra h2{margin-bottom:8px}
 .estacoes-postos-reference .estacoes-extra p{margin-bottom:7px}
+
+/* Refinamento visual após comparação com a captura enviada */
+.estacoes-postos-reference{padding-top:22px}
+.estacoes-postos-reference>h1{font-size:30px;line-height:1.2;font-weight:700;letter-spacing:0;margin:0 0 11px}
+.estacoes-postos-reference .etapa5-subtitle{font-size:16px;line-height:1.5;margin-bottom:18px}
+.estacoes-postos-reference .etapa5-siglas{margin-bottom:17px}
+.estacoes-postos-reference .etapa5-siglas h2{padding-top:9px;padding-bottom:9px}
+.estacoes-postos-reference .etapa5-siglas p{padding-top:7px;padding-bottom:7px}
+.estacoes-postos-reference .etapa5-stations-reference h2{font-size:21px;line-height:1.3;margin-bottom:7px}
+.estacoes-postos-reference .etapa5-stations-reference p{font-size:14px;line-height:1.55;margin-bottom:4px}
+.estacoes-postos-reference .estacoes-extra{margin-top:22px}
+@media(max-width:700px){
+ .estacoes-postos-reference{padding-top:16px}
+ .estacoes-postos-reference>h1{font-size:25px;line-height:1.2}
+ .estacoes-postos-reference .etapa5-subtitle{font-size:14px}
+ .estacoes-postos-reference .etapa5-stations-reference h2{font-size:20px}
+ .estacoes-postos-reference .etapa5-stations-reference p{font-size:13px;line-height:1.55}
+}
