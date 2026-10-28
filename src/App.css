@@ -238,3 +238,56 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
 .source-alert p{margin:0;line-height:1.6}
 .lesson-reader>p{font-size:16px;line-height:1.85;white-space:pre-line}
 @media(max-width:600px){.lesson-reader>p{font-size:15px;line-height:1.8}.source-alert{padding:12px}}
+
+/* Layout de referência: organograma em caixas pastel conectadas, igual à imagem fornecida */
+.reference-org{margin:0 0 26px;background:#fff;color:#344b65}
+.reference-org-heading{text-align:center;padding:6px 8px 22px;background:#fff;color:#344b65}
+.reference-org-heading h2{font:700 clamp(18px,2.5vw,24px)/1.25 Arial,sans-serif;margin:0 0 5px;letter-spacing:0;color:#344b65}
+.reference-org-heading p{font:12px/1.5 Arial,sans-serif;margin:0;color:#526984}
+.reference-org-canvas{max-width:880px;margin:0 auto;padding:8px 12px 14px;display:flex;flex-direction:column;align-items:center;font-family:Arial,sans-serif}
+.reference-org-box{border:1px solid #89a9c5;border-radius:11px;min-height:42px;padding:7px 11px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;box-sizing:border-box;color:#344b65;line-height:1.35}
+.reference-org-box strong{font-weight:700;font-size:12px}
+.reference-org-box span{font-size:10px;margin-top:1px}
+.reference-org-box.director{width:min(100%,213px);background:#dbe9f5}
+.reference-org-branch{height:32px;width:40%;max-width:360px;border-left:1.5px solid #7892aa;border-right:1.5px solid #7892aa;border-top:0;position:relative}
+.reference-org-branch:before{content:"";position:absolute;left:50%;top:0;height:100%;border-left:1.5px solid #7892aa}
+.reference-org-managers{display:grid;grid-template-columns:1fr 1fr;gap:18px;width:88%;align-items:stretch}
+.reference-org-box.manager-green{background:#e0efe4}
+.reference-org-box.manager-purple,.reference-org-box.coord-purple{background:#ece7f5}
+.reference-org-stem{height:17px;border-left:1.5px solid #7892aa}
+.reference-org-box.supervisor{background:#f7ead9;width:min(100%,230px)}
+.reference-org-team-line{height:32px;width:87%;position:relative;margin-top:0;border-top:1.5px solid #7892aa}
+.reference-org-team-line i{height:14px;border-left:1.5px solid #7892aa;position:absolute;top:0}
+.reference-org-team-line i:nth-child(1){left:0}
+.reference-org-team-line i:nth-child(2){left:33.333%}
+.reference-org-team-line i:nth-child(3){left:66.666%}
+.reference-org-team-line i:nth-child(4){right:0}
+.reference-org-coordinators{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;width:100%;margin-top:-19px}
+.reference-org-downline{height:26px;border-left:1.5px solid #7892aa}
+.reference-org-panel{width:min(100%,515px);border:1px solid #89a9c5;border-radius:11px;text-align:center;padding:9px 12px;box-sizing:border-box}
+.reference-org-panel h3{font:700 11px/1.4 Arial,sans-serif;margin:0 0 4px;color:#344b65}
+.reference-org-panel p{font:10px/1.35 Arial,sans-serif;margin:0;color:#344b65}
+.reference-org-panel.leaders-panel{background:#f7ead9}
+.reference-org-panel.quality-panel{background:#e0efe4}
+.reference-org-panel.safety-panel{background:#edf0f4}
+.reference-org-note{font-size:11px;color:#718196;margin:7px 4px 0;line-height:1.6}
+.stage5-stations{margin:22px 0 28px;padding:0 2px;font-family:Arial,sans-serif;color:#263e57}
+.stage5-stations h2{font:700 21px/1.3 Arial,sans-serif;color:#2b7b80;margin:0 0 8px}
+.stage5-station-list p,.stage5-additional p{font:14px/1.55 Arial,sans-serif;margin:5px 0;color:#263e57}
+.stage5-station-list strong,.stage5-additional strong{font-weight:700}
+.stage5-additional{margin-top:18px;padding:14px 15px;background:#edf3f8;border:1px solid #d7e3ee;border-radius:4px}
+.stage5-additional h3{font:700 15px/1.4 Arial,sans-serif;color:#294764;margin:0 0 7px}
+@media(max-width:640px){
+ .reference-org-canvas{padding:8px 2px}
+ .reference-org-managers{width:100%;gap:7px}
+ .reference-org-box{padding:7px 5px}
+ .reference-org-box strong{font-size:10px}
+ .reference-org-box span{font-size:8px}
+ .reference-org-team-line{width:100%}
+ .reference-org-coordinators{gap:4px;grid-template-columns:repeat(2,minmax(0,1fr));margin-top:0}
+ .reference-org-team-line{height:17px}
+ .reference-org-downline{height:18px}
+ .reference-org-panel{padding:9px 6px}
+ .reference-org-panel p{font-size:9px}
+ .stage5-station-list p,.stage5-additional p{font-size:13px}
+}
