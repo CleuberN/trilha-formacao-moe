@@ -334,3 +334,24 @@ button:focus-visible,input:focus-visible{outline:3px solid #78b8ff;outline-offse
  .estacoes-postos-reference .etapa5-stations-reference h2{font-size:20px}
  .estacoes-postos-reference .etapa5-stations-reference p{font-size:13px;line-height:1.55}
 }
+
+/* Glassmorphism aplicado aos cartões reais de conteúdo e revisão */
+.glassCard.glassCard {
+  background: rgba(255, 255, 255, 0.72);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
+  backdrop-filter: blur(16px) saturate(145%);
+  border: 1px solid rgba(255, 255, 255, 0.82);
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(18,59,93,.09), inset 0 1px 0 rgba(255,255,255,.72);
+  color: #172536;
+}
+.glassCard.lesson-reader { background: rgba(255,255,255,.74); }
+.glassCard.quiz-note { background: rgba(237,245,250,.74); }
+.glassPageBackground { background:
+  radial-gradient(ellipse at 12% 10%, rgba(25,169,116,.10), transparent 34%),
+  radial-gradient(ellipse at 86% 20%, rgba(65,145,210,.13), transparent 36%),
+  radial-gradient(ellipse at 56% 88%, rgba(255,138,0,.07), transparent 36%),
+  #f3f6f9; }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+ .glassCard.glassCard { background: rgba(255,255,255,.96); }
+}
