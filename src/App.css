@@ -816,3 +816,57 @@ main.app .org-chart-poster .poster-row-connector i,
 main.app .org-chart-poster .poster-row-connector { border-color:#0b2855 !important; }
 main.app .org-chart-poster .poster-row-connector { border-top-color:#0b2855 !important; }
 main.app .org-chart-poster .reference-org-note { color:#536780 !important; }
+
+
+/* Paleta de referência aplicada ao componente original do organograma */
+main.app .reference-org {
+  background: #edf5fb !important;
+  color: #112f5e !important;
+  border: 1px solid #d2e2f0 !important;
+  border-radius: 16px !important;
+  overflow: hidden;
+}
+main.app .reference-org .reference-org-heading {
+  background: linear-gradient(110deg,#163e68 0%,#163e68 52%,#edf5fb 52%,#dfeef8 100%) !important;
+  padding: 18px 12px 22px !important;
+}
+main.app .reference-org .reference-org-heading h2,
+main.app .reference-org .reference-org-heading p {
+  color: #fff !important;
+}
+main.app .reference-org .reference-org-canvas {
+  background: #edf5fb !important;
+  max-width: 1000px;
+}
+main.app .reference-org .reference-org-box {
+  border: 1px solid #a6bfd5 !important;
+  border-radius: 10px !important;
+  color: #fff !important;
+  box-shadow: 0 4px 10px rgba(16,44,83,.10);
+  padding: 12px 14px !important;
+}
+main.app .reference-org .reference-org-box strong,
+main.app .reference-org .reference-org-box span { color: inherit !important; }
+main.app .reference-org .reference-org-box.director { background:#082c60 !important; color:#fff !important; width:min(100%,320px) !important; }
+main.app .reference-org .reference-org-box.manager-green { background:#0757b5 !important; color:#fff !important; }
+main.app .reference-org .reference-org-box.manager-purple { background:#087b86 !important; color:#fff !important; }
+main.app .reference-org .reference-org-box.supervisor { background:#7050ad !important; color:#fff !important; }
+main.app .reference-org .reference-org-box.coord-purple { background:#ded5ff !important; border-color:#a88cff !important; color:#0a2450 !important; }
+main.app .reference-org .reference-org-panel {
+  border:1px solid #b4cde1 !important;
+  border-radius:12px !important;
+  color:#102c5c !important;
+}
+main.app .reference-org .reference-org-panel h3,
+main.app .reference-org .reference-org-panel p { color:#102c5c !important; }
+main.app .reference-org .reference-org-panel.leaders-panel { background:#d9edfc !important; }
+main.app .reference-org .reference-org-panel.quality-panel { background:#e4f3df !important; }
+main.app .reference-org .reference-org-panel.safety-panel { background:#fce6c7 !important; }
+main.app .reference-org .reference-org-note { color:#526b86 !important; }
+main.app .reference-org .reference-org-branch,
+main.app .reference-org .reference-org-branch:before,
+main.app .reference-org .reference-org-stem,
+main.app .reference-org .reference-org-team-line,
+main.app .reference-org .reference-org-team-line i,
+main.app .reference-org .reference-org-downline { border-color:#173765 !important; background-color:transparent !important; }
+main.app .reference-org .reference-org-branch:after { border-top-color:#173765 !important; }
