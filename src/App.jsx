@@ -185,7 +185,7 @@ function App() {
     <main className="app glassPageBackground">
       <header className="topbar">
         <button className="brand" onClick={() => setView("home")} aria-label="Voltar ao início">MOE<span>Biblioteca de Formação</span></button>
-        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button onClick={() => setView("library")}>Biblioteca</button><button className={view === "inspection" ? "nav-active" : ""} onClick={() => setView("inspection")}>Inspeção técnica</button></nav>
+        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button onClick={() => setView("library")}>Biblioteca</button><button className={view === "inspection" ? "nav-active" : ""} onClick={() => setView("inspection")}>Inspeção técnica</button><button className={view === "quiz" ? "nav-active" : ""} onClick={() => setView("quiz")}>Quiz MOE</button></nav>
       </header>
 
       {view === "home" && <>
@@ -219,6 +219,7 @@ function App() {
       </>}
 
       {view === "inspection" && <InspectionPanel axis={axes[axis]} onBack={() => setView("home")} />}
+      {view === "quiz" && <QuizMOE />}
 
       {(view === "lesson" || view === "library") && <section className="learning-layout">
         <aside className="learning-sidebar">
@@ -359,6 +360,34 @@ function Etapa5StationList() {
   );
 }
 
+
+
+const moeQuizQuestions = [{"q":"Antes de aplicar um torque de montagem, o que deve ser feito?","opts":["Usar o valor de um eixo parecido","Consultar a instrução aprovada para o modelo e a variante","Escolher o valor pela experiência visual","Usar sempre o mesmo valor"],"correct":1,"why":"Torque é específico da aplicação. Confirme modelo, variante e revisão da documentação."},{"q":"A inspeção visual substitui todas as medições exigidas?","opts":["Sim, se a peça parecer boa","Somente em produção alta","Não; cada controle obrigatório deve ser realizado","Sim, quando o operador é experiente"],"correct":2,"why":"A inspeção visual não substitui medições, testes ou registros exigidos no procedimento."},{"q":"O que fazer ao encontrar uma condição fora do critério de aceitação?","opts":["Liberar se a falha for pequena","Corrigir sem registrar","Seguir o procedimento de não conformidade e comunicar a liderança/Qualidade","Continuar e avisar no fim do turno"],"correct":2,"why":"Siga o fluxo local de identificação, segregação, registro e comunicação. Não libere por conta própria."},{"q":"Qual é a função geral do diferencial?","opts":["Armazenar óleo","Permitir diferença de rotação entre as rodas motrizes e distribuir movimento","Substituir os semieixos","Medir o torque de aperto"],"correct":1,"why":"O diferencial permite que as rodas motrizes girem a velocidades diferentes, por exemplo em curvas."},{"q":"Pode-se usar o procedimento de um modelo de eixo em outro sem confirmar a aplicação?","opts":["Sim, se forem parecidos","Sim, quando a ferramenta é a mesma","Não; é necessário confirmar a identificação e a documentação aplicável","Sim, desde que o torque pareça adequado"],"correct":2,"why":"Modelos e variantes podem ter procedimentos e parâmetros diferentes. Não transfira especificações sem validação."}];
+function QuizMOE() {
+  const [index, setIndex] = useState(0);
+  const [answers, setAnswers] = useState({});
+  const [finished, setFinished] = useState(false);
+  const [best, setBest] = useState(() => Number(localStorage.getItem("moe-quiz-best") || 0));
+  const score = moeQuizQuestions.reduce((total, q, i) => total + (answers[i] === q.correct ? 1 : 0), 0);
+  const question = moeQuizQuestions[index];
+  const choose = (option) => { if (answers[index] === undefined) setAnswers(old => ({...old, [index]: option})); };
+  const finish = () => { const finalScore = moeQuizQuestions.reduce((total,q,i)=>total+(answers[i]===q.correct?1:0),0); setFinished(true); if(finalScore>best){setBest(finalScore);localStorage.setItem("moe-quiz-best",String(finalScore));} };
+  const restart = () => { setIndex(0); setAnswers({}); setFinished(false); };
+  return <section className="moe-quiz-page">
+    <div className="moe-quiz-heading"><span className="eyebrow">MOE · APRENDIZAGEM ATIVA</span><h1>Quiz técnico</h1><p>Revise os fundamentos de segurança, montagem e qualidade. Responda às questões e veja a explicação de cada resposta.</p></div>
+    <div className="moe-quiz-card glass-panel">
+      {!finished ? <>
+        <div className="moe-quiz-meta"><span>QUESTÃO {index+1} DE {moeQuizQuestions.length}</span><span>Melhor resultado: {best}/{moeQuizQuestions.length}</span></div>
+        <div className="moe-quiz-progress"><span style={{width:((index+1)/moeQuizQuestions.length*100)+"%"}} /></div>
+        <h2>{question.q}</h2>
+        <div className="moe-quiz-options">{question.opts.map((opt,i)=>{const chosen=answers[index]===i;return <button key={opt} onClick={()=>choose(i)} className={"moe-quiz-option"+(chosen?" chosen":"")}><span>{String.fromCharCode(65+i)}</span>{opt}</button>})}</div>
+        {answers[index]!==undefined && <div className="moe-quiz-feedback"><strong>{answers[index]===question.correct?"Resposta correta":"Vamos revisar"}</strong><p>{question.why}</p></div>}
+        <div className="moe-quiz-actions"><span>{Object.keys(answers).length} de {moeQuizQuestions.length} respondidas</span>{index<moeQuizQuestions.length-1?<button className="primary-btn" disabled={answers[index]===undefined} onClick={()=>setIndex(index+1)}>Próxima questão →</button>:<button className="primary-btn" disabled={answers[index]===undefined} onClick={finish}>Ver resultado →</button>}</div>
+      </>:<div className="moe-quiz-result"><div className="moe-quiz-trophy">{score===moeQuizQuestions.length?"✦":"✓"}</div><span className="eyebrow">RESULTADO DA REVISÃO</span><h2>{score} de {moeQuizQuestions.length} acertos</h2><p>{Math.round(score/moeQuizQuestions.length*100)}% de aproveitamento</p><div className="moe-quiz-progress"><span style={{width:(score/moeQuizQuestions.length*100)+"%"}} /></div><p>{score===moeQuizQuestions.length?"Excelente! Você acertou todas as questões.":"Revise as explicações e tente novamente para reforçar os conceitos."}</p><button className="primary-btn" onClick={restart}>Refazer quiz ↻</button></div>}
+    </div>
+    <p className="moe-quiz-note">Conteúdo de revisão geral. Para atividades reais, siga sempre os procedimentos e critérios oficiais aplicáveis ao eixo identificado.</p>
+  </section>;
+}
 
 function InspectionPanel({ axis, onBack }) {
   const [selected, setSelected] = useState(inspectionParts[0].id);
