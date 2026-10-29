@@ -131,7 +131,16 @@ const modules = [
 
 ];
 
-const axes = {
+
+const inspectionParts = [
+  { id:"carcaca", name:"Carcaça do eixo", category:"Estrutura", description:"Estrutura que aloja e protege os componentes internos do conjunto.", checks:["Verificar trincas, deformações e danos visíveis.","Conferir superfícies de união e alojamentos conforme documentação aplicável."], caution:"Não aprovar o conjunto apenas por inspeção visual; seguir o plano de controle e a instrução de trabalho da variante identificada." },
+  { id:"coroa", name:"Coroa", category:"Transmissão", description:"Engrenagem do conjunto final que trabalha engrenada com o pinhão para transmitir e reduzir a rotação.", checks:["Observar dentes quanto a lascas, riscos ou desgaste anormal.","Confirmar montagem, contato e folga conforme especificação oficial do eixo."], caution:"Não utilizar valores genéricos de folga ou torque. Consultar a documentação correta do conjunto." },
+  { id:"pinhao", name:"Pinhão", category:"Transmissão", description:"Engrenagem acionadora do conjunto final, engrenada com a coroa.", checks:["Inspecionar dentes e superfícies de contato.","Conferir rolamentos, ajuste e pré-carga conforme procedimento aprovado."], caution:"Ajustes incorretos podem causar ruído, aquecimento e desgaste prematuro." },
+  { id:"diferencial", name:"Conjunto diferencial", category:"Distribuição de torque", description:"Permite que as rodas motrizes girem a velocidades diferentes durante curvas, distribuindo torque às saídas.", checks:["Verificar engrenagens, eixos, arruelas e alojamentos conforme instrução.","Confirmar montagem e livre movimentação pelo método especificado."], caution:"A sequência de montagem e os critérios de aceitação variam conforme o modelo." },
+  { id:"semeixos", name:"Semieixos", category:"Transmissão", description:"Transferem torque do diferencial para as rodas motrizes.", checks:["Inspecionar estrias, superfícies e sinais de torção ou desgaste.","Confirmar identificação, assentamento e fixação conforme procedimento."], caution:"Não misturar componentes de variantes diferentes sem confirmação técnica." },
+  { id:"rolamentos", name:"Rolamentos", category:"Apoio e ajuste", description:"Apoiam e guiam eixos e engrenagens, reduzindo atrito e mantendo o posicionamento previsto.", checks:["Verificar pistas e roletes quanto a marcas, corrosão ou danos.","Confirmar lubrificação, assentamento e ajuste conforme documentação."], caution:"Não reutilizar nem substituir componentes fora dos critérios definidos pelo fabricante." }
+];
+\nconst axes = {
   iveco: { title: "IVECO MS-23", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/iveco-ms23.jpeg", note: "A aplicação dos manuais disponíveis ao MS-23 ainda precisa ser confirmada. Não utilize parâmetros de outros modelos sem validação." },
   daf: { title: "DAF MD", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/daf-md.jpeg", note: "Confirme a identificação completa e a variante do eixo DAF MD antes de associar procedimentos ou especificações de um manual." }
 };
@@ -176,7 +185,7 @@ function App() {
     <main className="app glassPageBackground">
       <header className="topbar">
         <button className="brand" onClick={() => setView("home")} aria-label="Voltar ao início">MOE<span>Biblioteca de Formação</span></button>
-        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button onClick={() => setView("library")}>Biblioteca</button></nav>
+        <nav><button className={view === "home" ? "nav-active" : ""} onClick={() => setView("home")}>Início</button><button onClick={() => setView("library")}>Biblioteca</button><button className={view === "inspection" ? "nav-active" : ""} onClick={() => setView("inspection")}>Inspeção técnica</button></nav>
       </header>
 
       {view === "home" && <>
@@ -208,6 +217,8 @@ function App() {
           <div className="module-grid">{modules.map((m, i) => <button className="module-card" key={m.id} onClick={() => openModule(m.id)}><span className="module-icon">{m.icon}</span><span className="module-number">MÓDULO {String(i + 1).padStart(2, "0")}</span><strong>{m.title}</strong><small>{m.summary}</small><span className="module-link">Abrir módulo <b>↗</b></span></button>)}</div>
         </section>
       </>}
+
+      {view === "inspection" && <InspectionPanel axis={axes[axis]} onBack={() => setView("home")} />}
 
       {(view === "lesson" || view === "library") && <section className="learning-layout">
         <aside className="learning-sidebar">
@@ -348,7 +359,38 @@ function Etapa5StationList() {
   );
 }
 
-function OrganogramaVisual() {
+
+function InspectionPanel({ axis, onBack }) {
+  const [selected, setSelected] = useState(inspectionParts[0].id);
+  const [checked, setChecked] = useState({});
+  const part = inspectionParts.find(item => item.id === selected) || inspectionParts[0];
+  const checks = checked[selected] || [];
+  return <section className="inspection-page">
+    <div className="inspection-top"><button className="back-link" onClick={onBack}>← Voltar ao início</button><span className="eyebrow">MOE · INSPEÇÃO DIDÁTICA</span><h1>Inspeção técnica interativa</h1><p>Explore os componentes do eixo, consulte os pontos de verificação e marque os itens revisados durante o estudo.</p>
+      <div className="inspection-axis"><span>CONJUNTO SELECIONADO</span><strong>{axis.title}</strong><small>A identificação exata da variante e o manual aplicável devem ser confirmados antes de executar serviços reais.</small></div>
+    </div>
+    <div className="inspection-dashboard">
+      <aside className="inspection-parts glass-panel"><div className="inspection-panel-title"><span>01 / COMPONENTES</span><strong>{inspectionParts.length} itens</strong></div>
+        {inspectionParts.map((item,index)=><button key={item.id} className={item.id===selected?"inspection-part selected":"inspection-part"} onClick={()=>setSelected(item.id)}><span className="inspection-part-number">{String(index+1).padStart(2,"0")}</span><span><strong>{item.name}</strong><small>{item.category}</small></span><b>↗</b></button>)}
+      </aside>
+      <section className="inspection-detail glass-panel">
+        <div className="inspection-detail-head"><span className="inspection-badge">COMPONENTE SELECIONADO</span><span className="inspection-status"><i/> MODO DE ESTUDO</span></div>
+        <div className="inspection-visual" aria-label="Diagrama didático esquemático do conjunto">
+          <div className="inspection-orbit orbit-one"/><div className="inspection-orbit orbit-two"/>
+          <div className={"inspection-part-visual visual-"+part.id}><span>{part.id==="carcaca"?"▱":part.id==="coroa"?"◉":part.id==="pinhao"?"⚙":part.id==="diferencial"?"✥":part.id==="semeixos"?"↔":"◎"}</span></div>
+          <span className="visual-label label-top">{part.category}</span><span className="visual-label label-bottom">{part.name}</span>
+        </div>
+        <span className="eyebrow">FUNÇÃO DO COMPONENTE</span><h2>{part.name}</h2><p className="inspection-description">{part.description}</p>
+        <div className="inspection-checklist"><div className="inspection-checklist-heading"><h3>Pontos de inspeção didática</h3><span>{checks.length}/{part.checks.length}</span></div>{part.checks.map((item,i)=><label key={item} className={checks.includes(i)?"inspection-check checked":"inspection-check"}><input type="checkbox" checked={checks.includes(i)} onChange={()=>setChecked(old=>({...old,[selected]:checks.includes(i)?checks.filter(n=>n!==i):[...checks,i]}))}/><span className="custom-check">{checks.includes(i)?"✓":""}</span><span>{item}</span></label>)}</div>
+        <div className="inspection-warning"><strong>⚠ Atenção técnica</strong><p>{part.caution}</p></div>
+        <div className="inspection-footer"><button className="secondary-btn" onClick={()=>{const i=inspectionParts.findIndex(x=>x.id===selected);setSelected(inspectionParts[(i+inspectionParts.length-1)%inspectionParts.length].id)}}>← Anterior</button><span>{inspectionParts.findIndex(x=>x.id===selected)+1} de {inspectionParts.length}</span><button className="primary-btn" onClick={()=>{const i=inspectionParts.findIndex(x=>x.id===selected);setSelected(inspectionParts[(i+1)%inspectionParts.length].id)}}>Próximo componente →</button></div>
+      </section>
+    </div>
+    <p className="inspection-disclaimer">Material didático geral. Utilize sempre o desenho, a instrução de trabalho e os critérios de qualidade aprovados para o código e a variante do eixo em questão.</p>
+  </section>;
+}
+
+\nfunction OrganogramaVisual() {
   const leaders = [
     { name: "Bruno", role: "1º turno — MOE e MDX" },
     { name: "Anderson", role: "1º turno — MOP" },
