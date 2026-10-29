@@ -946,3 +946,39 @@ main.app .org-chart-force-colors .reference-org-note { color:#536780 !important;
     padding: 10px 14px !important;
   }
 }
+
+
+/* Animações leves da trilha MOE: entrada dos módulos, progresso e aulas */
+@keyframes moe-fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.module-grid .module-card {
+  animation: moe-fade-in-up .55s cubic-bezier(.2,.75,.25,1) both;
+}
+.module-grid .module-card:nth-child(1) { animation-delay: .05s; }
+.module-grid .module-card:nth-child(2) { animation-delay: .16s; }
+.module-grid .module-card:nth-child(3) { animation-delay: .27s; }
+.module-grid .module-card:nth-child(4) { animation-delay: .38s; }
+.module-grid .module-card:nth-child(5) { animation-delay: .49s; }
+.module-grid .module-card:nth-child(6) { animation-delay: .60s; }
+.module-grid .module-card:hover { transform: translateY(-4px); }
+.progress-track div {
+  width: var(--progress-target, 100%);
+  animation: moe-progress-grow 1.2s cubic-bezier(.22,.8,.25,1) both;
+}
+@keyframes moe-progress-grow {
+  from { width: 0; }
+  to { width: var(--progress-target, 100%); }
+}
+.lesson-reader {
+  animation: moe-fade-in-up .32s ease-out both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .module-grid .module-card,
+  .progress-track div,
+  .lesson-reader {
+    animation: none !important;
+    transition: none !important;
+  }
+}
