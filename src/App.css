@@ -761,3 +761,58 @@ main.app.glassPageBackground {
  .org-chart-poster .poster-managers { gap:8px; }
  .org-chart-poster .poster-connector { width:75%; }
 }
+
+
+/* OVERRIDE FINAL — cores com alta especificidade para superar o tema global */
+main.app .org-chart-poster {
+  background: #eef5fa !important;
+  color: #071d4d !important;
+  border: 1px solid #c5d8e8 !important;
+}
+main.app .org-chart-poster .poster-title {
+  background: linear-gradient(110deg,#153b63 0%,#153b63 47%,#eef5fa 47%,#e4f1f9 100%) !important;
+}
+main.app .org-chart-poster .poster-title h2,
+main.app .org-chart-poster .poster-title p { color:#fff !important; }
+main.app .org-chart-poster .poster-person strong,
+main.app .org-chart-poster .poster-person span:not(.poster-avatar),
+main.app .org-chart-poster .poster-tech strong,
+main.app .org-chart-poster .poster-tech span,
+main.app .org-chart-poster .poster-panel h3,
+main.app .org-chart-poster .poster-area,
+main.app .org-chart-poster .poster-area span,
+main.app .org-chart-poster .responsibilities-panel strong,
+main.app .org-chart-poster .responsibilities-panel span { color:#071d4d !important; }
+main.app .org-chart-poster .director { background:#082c60 !important; color:#fff !important; }
+main.app .org-chart-poster .manager-blue { background:#0757b5 !important; color:#fff !important; }
+main.app .org-chart-poster .manager-teal { background:#087b86 !important; color:#fff !important; }
+main.app .org-chart-poster .supervisor { background:#7050ad !important; color:#fff !important; }
+main.app .org-chart-poster .poster-person.yellow,
+main.app .org-chart-poster .poster-tech.yellow { background:#ffd66a !important; border-color:#ffba19 !important; }
+main.app .org-chart-poster .poster-person.green,
+main.app .org-chart-poster .poster-tech.green { background:#c5eab8 !important; border-color:#7fce69 !important; }
+main.app .org-chart-poster .poster-person.blue,
+main.app .org-chart-poster .poster-tech.blue { background:#b8defb !important; border-color:#54aafa !important; }
+main.app .org-chart-poster .poster-person.pink,
+main.app .org-chart-poster .poster-tech.pink { background:#f8c0cb !important; border-color:#ff91a8 !important; }
+main.app .org-chart-poster .poster-person.purple,
+main.app .org-chart-poster .poster-tech.purple { background:#d8ccff !important; border-color:#a68aff !important; }
+main.app .org-chart-poster .leaders-row { background:rgba(178,219,247,.70) !important; }
+main.app .org-chart-poster .technical-row { background:rgba(218,241,220,.85) !important; }
+main.app .org-chart-poster .areas-panel { background:#d8e2ec !important; }
+main.app .org-chart-poster .responsibilities-panel { background:#ffe8b8 !important; }
+main.app .org-chart-poster .poster-area { background:rgba(255,255,255,.72) !important; }
+main.app .org-chart-poster .responsibilities-panel>div { background:rgba(255,255,255,.72) !important; }
+main.app .org-chart-poster .poster-labeled-row>h3 { color:#071d4d !important; }
+main.app .org-chart-poster .poster-avatar { color:inherit !important; border-color:currentColor !important; }
+main.app .org-chart-poster .poster-connector,
+main.app .org-chart-poster .poster-team-connector { border-color:#0b2855 !important; }
+main.app .org-chart-poster .poster-connector:before,
+main.app .org-chart-poster .poster-connector i,
+main.app .org-chart-poster .poster-connector b,
+main.app .org-chart-poster .poster-team-connector:before,
+main.app .org-chart-poster .poster-team-connector i,
+main.app .org-chart-poster .poster-row-connector i,
+main.app .org-chart-poster .poster-row-connector { border-color:#0b2855 !important; }
+main.app .org-chart-poster .poster-row-connector { border-top-color:#0b2855 !important; }
+main.app .org-chart-poster .reference-org-note { color:#536780 !important; }
