@@ -368,8 +368,8 @@ function OrganogramaVisual() {
     ["MDX", "Montagem do Eixo Intermediário", "pink"], ["Oficina / Workshop", "Ajustes, retrabalhos e correções em geral", "purple"]
   ];
   return (
-    <section className="org-chart reference-org org-chart-poster" aria-label="Organograma da montagem MOE">
-      <header className="poster-title"><h2>ORGANOGRAMA DA MONTAGEM</h2><p>MOE – Montagem de Eixos</p></header>
+    <section className="org-chart reference-org org-chart-poster org-chart-force-colors" aria-label="Organograma da montagem MOE">
+      <header className="poster-title org-heading-force"><h2>ORGANOGRAMA DA MONTAGEM</h2><p>MOE – Montagem de Eixos</p></header>
       <div className="poster-tree">
         <div className="poster-person director"><span className="poster-avatar">●</span><div><strong>Jorge Silveira</strong><span>Diretor de Operações</span><span>América do Sul</span></div></div>
         <div className="poster-connector top-connector"><i /><b /><i /></div>
