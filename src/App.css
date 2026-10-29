@@ -1016,3 +1016,25 @@ main.app .org-chart-force-colors .reference-org-note { color:#536780 !important;
 .inspection-disclaimer{max-width:1100px;margin:16px auto;color:#94a5c7;font-size:.78rem;line-height:1.6}
 @media(max-width:720px){.inspection-dashboard{grid-template-columns:minmax(0,1fr);gap:13px}.inspection-parts{padding:13px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.inspection-panel-title{grid-column:1/-1}.inspection-part{margin:0;padding:10px 8px;gap:7px}.inspection-part-number{flex-basis:29px;height:29px}.inspection-part strong{font-size:.78rem}.inspection-part small{font-size:.68rem}.inspection-part>b{display:none}.inspection-visual{height:190px}.inspection-footer{flex-wrap:wrap}.inspection-footer button{flex:1}.inspection-footer>span{order:-1;width:100%;text-align:center}.inspection-top{padding:0 2px}}
 @media(prefers-reduced-motion:reduce){.inspection-part-visual{animation:none}.inspection-part{transition:none}}
+
+/* Quiz técnico MOE */
+.moe-quiz-page{max-width:980px;margin:0 auto;padding:clamp(14px,3vw,30px) 0 38px;color:#eef3ff}
+.moe-quiz-heading h1{font-size:clamp(1.8rem,4vw,2.7rem);margin:8px 0;color:#fff;letter-spacing:-.04em}
+.moe-quiz-heading p{max-width:720px;color:#b7c4df;line-height:1.65}
+.moe-quiz-card{margin-top:22px;padding:clamp(18px,4vw,34px)}
+.moe-quiz-meta{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:#b9c8ef;font-size:.75rem;font-weight:800;letter-spacing:.07em}
+.moe-quiz-progress{height:7px;border-radius:20px;background:rgba(255,255,255,.09);overflow:hidden;margin:14px 0 26px}
+.moe-quiz-progress span{display:block;height:100%;border-radius:inherit;background:linear-gradient(90deg,#ff2a74,#8b5cf6,#29d7ef);transition:width .35s ease}
+.moe-quiz-card h2{font-size:clamp(1.15rem,3vw,1.55rem);line-height:1.45;color:#fff;margin:0 0 20px}
+.moe-quiz-options{display:grid;gap:10px}
+.moe-quiz-option{display:flex;align-items:center;gap:12px;text-align:left;width:100%;min-height:55px;padding:12px 14px;border:1px solid rgba(190,199,255,.15);border-radius:13px;background:rgba(255,255,255,.035);color:#dce6ff;line-height:1.5;cursor:pointer;transition:background .2s,border-color .2s}
+.moe-quiz-option:hover,.moe-quiz-option.chosen{background:linear-gradient(100deg,rgba(143,65,255,.22),rgba(30,198,255,.1));border-color:rgba(120,170,255,.65)}
+.moe-quiz-option>span{display:grid;place-items:center;flex:0 0 29px;height:29px;border-radius:9px;background:rgba(255,255,255,.08);color:#9fe8ff;font-weight:800}
+.moe-quiz-feedback{margin-top:17px;padding:14px 16px;border-radius:13px;background:rgba(45,216,170,.07);border:1px solid rgba(45,216,170,.22)}
+.moe-quiz-feedback strong{color:#80f0c7}.moe-quiz-feedback p{margin:6px 0 0;color:#c2d4e8;line-height:1.6;font-size:.9rem}
+.moe-quiz-actions{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:24px}.moe-quiz-actions>span{color:#9eafd0;font-size:.8rem}
+.moe-quiz-actions button:disabled{opacity:.4;cursor:not-allowed;filter:grayscale(.3)}
+.moe-quiz-result{text-align:center;padding:12px 0}.moe-quiz-result h2{margin:12px 0 4px}.moe-quiz-result p{color:#b9c6df;line-height:1.6}
+.moe-quiz-trophy{width:68px;height:68px;display:grid;place-items:center;margin:0 auto 18px;border-radius:22px;background:linear-gradient(140deg,rgba(255,42,116,.25),rgba(139,92,246,.3),rgba(41,215,239,.2));border:1px solid rgba(180,190,255,.4);font-size:2rem;color:#a7f3ff;box-shadow:0 0 35px rgba(139,92,246,.2)}
+.moe-quiz-note{margin-top:15px;color:#94a5c7;font-size:.8rem;line-height:1.6}
+@media(max-width:600px){.moe-quiz-page{padding-top:12px}.moe-quiz-actions{align-items:stretch;flex-direction:column}.moe-quiz-actions button{width:100%;min-height:46px}.moe-quiz-card{border-radius:18px}}
