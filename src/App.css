@@ -870,3 +870,44 @@ main.app .reference-org .reference-org-team-line,
 main.app .reference-org .reference-org-team-line i,
 main.app .reference-org .reference-org-downline { border-color:#173765 !important; background-color:transparent !important; }
 main.app .reference-org .reference-org-branch:after { border-top-color:#173765 !important; }
+
+/* Targeted palette: this class is attached only to the actual MOE poster */
+main.app .org-chart-force-colors {
+  background:#edf5fb !important; color:#092653 !important; border:1px solid #c5d8e8 !important;
+  box-shadow:none !important; border-radius:18px !important;
+}
+main.app .org-chart-force-colors .org-heading-force {
+  background:linear-gradient(110deg,#153b63 0%,#153b63 48%,#edf5fb 48%,#e2f1fb 100%) !important;
+}
+main.app .org-chart-force-colors .org-heading-force h2,
+main.app .org-chart-force-colors .org-heading-force p { color:#fff !important; }
+main.app .org-chart-force-colors .poster-tree { background:#edf5fb !important; }
+main.app .org-chart-force-colors .director { background:#082c60 !important; }
+main.app .org-chart-force-colors .manager-blue { background:#0757b5 !important; }
+main.app .org-chart-force-colors .manager-teal { background:#087b86 !important; }
+main.app .org-chart-force-colors .supervisor { background:#7050ad !important; }
+main.app .org-chart-force-colors .poster-person.compact,
+main.app .org-chart-force-colors .poster-tech { color:#061b45 !important; }
+main.app .org-chart-force-colors .poster-person.yellow,
+main.app .org-chart-force-colors .poster-tech.yellow { background:#ffd66a !important; border-color:#ffba19 !important; }
+main.app .org-chart-force-colors .poster-person.green,
+main.app .org-chart-force-colors .poster-tech.green { background:#c5eab8 !important; border-color:#7fce69 !important; }
+main.app .org-chart-force-colors .poster-person.blue,
+main.app .org-chart-force-colors .poster-tech.blue { background:#b8defb !important; border-color:#54aafa !important; }
+main.app .org-chart-force-colors .poster-person.pink,
+main.app .org-chart-force-colors .poster-tech.pink { background:#f8c0cb !important; border-color:#ff91a8 !important; }
+main.app .org-chart-force-colors .poster-person.purple,
+main.app .org-chart-force-colors .poster-tech.purple { background:#d8ccff !important; border-color:#a68aff !important; }
+main.app .org-chart-force-colors .leaders-row { background:#d9edfc !important; }
+main.app .org-chart-force-colors .technical-row { background:#e4f3df !important; }
+main.app .org-chart-force-colors .poster-labeled-row h3 { color:#092653 !important; }
+main.app .org-chart-force-colors .areas-panel { background:#d8e2ec !important; }
+main.app .org-chart-force-colors .responsibilities-panel { background:#ffe8b8 !important; }
+main.app .org-chart-force-colors .poster-area,
+main.app .org-chart-force-colors .responsibilities-panel>div { background:rgba(255,255,255,.78) !important; color:#092653 !important; }
+main.app .org-chart-force-colors .poster-area span,
+main.app .org-chart-force-colors .poster-area strong,
+main.app .org-chart-force-colors .poster-panel h3,
+main.app .org-chart-force-colors .responsibilities-panel strong,
+main.app .org-chart-force-colors .responsibilities-panel span { color:#092653 !important; }
+main.app .org-chart-force-colors .reference-org-note { color:#536780 !important; }
