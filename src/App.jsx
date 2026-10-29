@@ -350,57 +350,52 @@ function Etapa5StationList() {
 
 function OrganogramaVisual() {
   const leaders = [
-    { name: "Bruno", role: "1º turno — MOE e MDX" },
-    { name: "Anderson", role: "1º turno — MOP" },
-    { name: "Renato", role: "1º turno — MDC e MOD" },
-    { name: "Clécio", role: "3º turno — MDC, MOD, MOE e MOP" },
+    { name: "Bruno", area: "MOE e MDX", shift: "Manhã — 1º turno", color: "yellow" },
+    { name: "Anderson", area: "MOP", shift: "Manhã — 1º turno", color: "green" },
+    { name: "Renato", area: "MOD / MDC", shift: "Manhã — 1º turno", color: "blue" },
+    { name: "Clécio", area: "MDC, MOD, MOE e MOP", shift: "Noite — 3º turno", color: "pink" },
+  ];
+  const technical = [
+    { name: "Samuel Gigna", area: "MOE", color: "yellow" },
+    { name: "Kleiton Santos", area: "MOP", color: "green" },
+    { name: "Alex Cardoso", area: "MOD / MDC", color: "blue" },
+    { name: "Samuel Guerra", area: "MDX", color: "pink" },
+    { name: "Kleiton Santos", area: "Oficina / Workshop", color: "purple" },
+  ];
+  const areas = [
+    ["MOE", "Montagem de Eixos", "yellow"], ["MOP", "Montagem de Peças", "green"],
+    ["MOD", "Montagem do Diferencial", "blue"], ["MDC", "Montagem da Carcaça", "sky"],
+    ["MDX", "Montagem do Eixo Intermediário", "pink"], ["Oficina / Workshop", "Ajustes, retrabalhos e correções em geral", "purple"]
   ];
   return (
-    <section className="org-chart reference-org" aria-label="Organograma da montagem">
-      <header className="reference-org-heading">
-        <h2>ETAPA 1 — ORGANOGRAMA DA MONTAGEM</h2>
-        <p>Caixas e ligações hierárquicas, com nomes apresentados um abaixo do outro.</p>
-      </header>
-      <div className="reference-org-canvas">
-        <div className="reference-org-box director"><strong>Jorge Silva</strong><span>Diretor de Operações</span></div>
-        <div className="reference-org-branch"><span /></div>
-        <div className="reference-org-managers">
-          <div className="reference-org-box manager-green"><strong>Geraldo Rodrigues</strong><span>Gerente da Montagem</span></div>
-          <div className="reference-org-box manager-purple"><strong>Alessandro T. Shiota</strong><span>Gerente da Industrialização</span></div>
+    <section className="org-chart reference-org org-chart-poster" aria-label="Organograma da montagem MOE">
+      <header className="poster-title"><h2>ORGANOGRAMA DA MONTAGEM</h2><p>MOE – Montagem de Eixos</p></header>
+      <div className="poster-tree">
+        <div className="poster-person director"><span className="poster-avatar">●</span><div><strong>Jorge Silveira</strong><span>Diretor de Operações</span><span>América do Sul</span></div></div>
+        <div className="poster-connector top-connector"><i /><b /><i /></div>
+        <div className="poster-managers">
+          <div className="poster-person manager-blue"><span className="poster-avatar">●</span><div><strong>Gerardo Rodrigues</strong><span>Gerente da Montagem</span></div></div>
+          <div className="poster-person manager-teal"><span className="poster-avatar">●</span><div><strong>Alessandro T. Shiota</strong><span>Gerente de Industrialização</span></div></div>
         </div>
-        <div className="reference-org-stem"><span /></div>
-        <div className="reference-org-box supervisor"><strong>Robert</strong><span>Supervisor de Manufatura / Montagem</span></div>
-        <div className="reference-org-team-line" aria-hidden="true"><i /><i /><i /><i /></div>
-        <div className="reference-org-coordinators">
-          <div className="reference-org-box coord-purple"><strong>Samuel Tigre</strong><span>Coordenador/engenheiro — MOE</span></div>
-          <div className="reference-org-box coord-purple"><strong>Kleiton Santos</strong><span>Coordenador/engenheiro — MOP e Oficina</span></div>
-          <div className="reference-org-box coord-purple"><strong>Alex Cardas</strong><span>Coordenador/engenheiro — MOD e MDC</span></div>
-          <div className="reference-org-box coord-purple"><strong>Samuel Guerra</strong><span>Coordenador/engenheiro — MDX</span></div>
-        </div>
-        <div className="reference-org-downline"><span /></div>
-        <section className="reference-org-panel leaders-panel">
-          <h3>LÍDERES POR TURNO</h3>
-          {leaders.map(person => <p key={person.name}><span>{person.role.split(" — ")[0]}</span> — {person.role.split(" — ")[1]}</p>)}
-        </section>
-        <div className="reference-org-downline"><span /></div>
-        <section className="reference-org-panel quality-panel">
-          <h3>QUALIDADE DA MONTAGEM</h3>
-          <p>Responde diretamente a Robert</p>
-          <p>Edinaldo Luz</p>
-          <p>Jasiel Claro (diurno)</p>
-          <p>João Vitor (noturno)</p>
-        </section>
-        <div className="reference-org-downline"><span /></div>
-        <section className="reference-org-panel safety-panel">
-          <h3>SEGURANÇA — SESMT / HSE</h3>
-          <p>Sandro Araújo • Carina Moreira</p>
-          <p>Ricardo Santos • Vanderlei Souza</p>
-          <p>Nara Szczygiel</p>
+        <div className="poster-supervisor-line" />
+        <div className="poster-person supervisor"><span className="poster-avatar">●</span><div><strong>Roberto</strong><span>Supervisor de Manufatura</span><span>Montagem</span></div></div>
+        <div className="poster-team-connector"><i /><i /><i /><i /></div>
+        <div className="poster-labeled-row leaders-row"><h3>LÍDERES<br/>DE TURNO</h3><div className="poster-leaders">{leaders.map(p => <div className={`poster-person compact ${p.color}`} key={p.name}><span className="poster-avatar">●</span><div><strong>{p.name}</strong><span>{p.area}</span><span>{p.shift}</span></div></div>)}</div></div>
+        <div className="poster-row-connector"><i /><i /><i /><i /><i /></div>
+        <div className="poster-labeled-row technical-row"><h3>RESPONSÁVEIS<br/>TÉCNICOS</h3><div className="poster-technicals">{technical.map((p,i) => <div className={`poster-tech ${p.color}`} key={p.name+i}><strong>{p.name}</strong><span>{p.area}</span></div>)}</div></div>
+      </div>
+      <div className="poster-bottom">
+        <section className="poster-panel areas-panel"><h3>⚙️　ÁREAS DA MONTAGEM</h3>{areas.map(a=><div className="poster-area" key={a[0]}><strong className={a[2]}>{a[0]}</strong><span>{a[1]}</span></div>)}</section>
+        <section className="poster-panel responsibilities-panel"><h3>👥　RESPONSABILIDADES PRINCIPAIS</h3>
+          <div><strong>Diretor de Operações</strong><span>Direção estratégica da operação na América do Sul.</span></div>
+          <div><strong>Gerentes</strong><span>Gestão da montagem e industrialização.</span></div>
+          <div><strong>Supervisor</strong><span>Coordenação da manufatura e da montagem.</span></div>
+          <div><strong>Líderes de turno</strong><span>Distribuição da equipe, acompanhamento da produção e suporte técnico.</span></div>
+          <div><strong>Responsáveis técnicos</strong><span>Apoio técnico da linha, segurança, qualidade e resolução de problemas.</span></div>
+          <div><strong>Oficina / Workshop</strong><span>Ajustes, retrabalhos, manutenção e correções.</span></div>
         </section>
       </div>
-      <p className="reference-org-note">Organograma didático conforme a referência visual fornecida. Confirme grafia e atribuições com a liderança antes do uso como documento oficial.</p>
+      <p className="reference-org-note">Organograma didático para consulta interna. Confirme nomes e atribuições com a liderança antes de utilizar como documento oficial.</p>
     </section>
   );
 }
-
-export default App;
