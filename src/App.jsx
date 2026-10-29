@@ -140,7 +140,8 @@ const inspectionParts = [
   { id:"semeixos", name:"Semieixos", category:"Transmissão", description:"Transferem torque do diferencial para as rodas motrizes.", checks:["Inspecionar estrias, superfícies e sinais de torção ou desgaste.","Confirmar identificação, assentamento e fixação conforme procedimento."], caution:"Não misturar componentes de variantes diferentes sem confirmação técnica." },
   { id:"rolamentos", name:"Rolamentos", category:"Apoio e ajuste", description:"Apoiam e guiam eixos e engrenagens, reduzindo atrito e mantendo o posicionamento previsto.", checks:["Verificar pistas e roletes quanto a marcas, corrosão ou danos.","Confirmar lubrificação, assentamento e ajuste conforme documentação."], caution:"Não reutilizar nem substituir componentes fora dos critérios definidos pelo fabricante." }
 ];
-\nconst axes = {
+
+const axes = {
   iveco: { title: "IVECO MS-23", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/iveco-ms23.jpeg", note: "A aplicação dos manuais disponíveis ao MS-23 ainda precisa ser confirmada. Não utilize parâmetros de outros modelos sem validação." },
   daf: { title: "DAF MD", subtitle: "Trilha de aprendizagem — identificação e montagem", image: "/images/daf-md.jpeg", note: "Confirme a identificação completa e a variante do eixo DAF MD antes de associar procedimentos ou especificações de um manual." }
 };
@@ -419,7 +420,8 @@ function InspectionPanel({ axis, onBack }) {
   </section>;
 }
 
-\nfunction OrganogramaVisual() {
+
+function OrganogramaVisual() {
   const leaders = [
     { name: "Bruno", role: "1º turno — MOE e MDX" },
     { name: "Anderson", role: "1º turno — MOP" },
