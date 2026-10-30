@@ -1106,3 +1106,20 @@ main.app .reference-org-heading p{
   main.app .reference-org-heading h2{font-size:clamp(16px,4.4vw,22px) !important;line-height:1.2 !important}
   main.app .reference-org-heading p{font-size:12px !important}
 }
+
+
+/* Remove a faixa clara do cabeçalho do organograma: fundo azul uniforme */
+main.app .reference-org .reference-org-heading,
+main.app .reference-org-heading {
+  background: #153b63 !important;
+  background-image: none !important;
+  color: #ffffff !important;
+}
+main.app .reference-org .reference-org-heading h2,
+main.app .reference-org .reference-org-heading p,
+main.app .reference-org-heading h2,
+main.app .reference-org-heading p {
+  color: #ffffff !important;
+  background: transparent !important;
+  background-image: none !important;
+}
