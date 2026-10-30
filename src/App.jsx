@@ -63,10 +63,10 @@ const modules = [
     {title:"Montagem do garfo",body:"Posto separado da submontagem do eixo intermediário."},
     {title:"Montagem do diferencial",body:"Posto específico para montar os diferenciais; não é a mesma atividade da montagem do intermediário. Possui ARO e LPT próprios."},
     {title:"Posto BAREX — dois postos de trabalho",body:"Destinado à preparação de eixos para Mercedes-Benz e Agrale, conforme os requisitos de cada cliente. O conjunto recebe diferencial, carcaça e semieixo acoplado. Nesse posto não são montados freio nem cubo; o semieixo é acoplado, não instalado como na montagem convencional. Conforme o requisito do cliente, pode acompanhar um kit separado com arruelas e demais acessórios necessários para fixar o semieixo. Alguns clientes não recebem o kit porque utilizam acessórios de outro fornecedor. O BAREX possui ARO e LPT."},
-    {title:"Observações BAREX — sequência de montagem",body:"Conferir na tela o Part Number, a sequência, os componentes, as operações e os Poka-Yokes solicitados."},
-    {title:"Observações BAREX — sistema Apriso",body:"Seguir a sequência indicada, sem pular ou antecipar operações; confirmar a conclusão de cada etapa antes de prosseguir."},
-    {title:"Observações BAREX — validação dos componentes",body:"Conferir se o componente corresponde ao Part Number solicitado e verificar quantidade, modelo e aplicação."},
-    {title:"Observações BAREX — Poka-Yokes",body:"Verificar os Poka-Yokes previstos e confirmar a validação no sistema. Nunca ignorar nem contornar um Poka-Yoke para liberar a operação."},
+    {title:"1. Sequência de montagem",body:"Conferir na tela o Part Number, a sequência, os componentes, as operações e os Poka-Yokes solicitados."},
+    {title:"2. Sistema Apriso",body:"Seguir a sequência indicada, sem pular ou antecipar operações; confirmar a conclusão de cada etapa antes de prosseguir."},
+    {title:"3. Validação dos componentes",body:"Conferir se o componente corresponde ao Part Number solicitado e verificar quantidade, modelo e aplicação."},
+    {title:"4. Poka-Yokes",body:"Verificar os Poka-Yokes previstos e confirmar a validação no sistema. Nunca ignorar nem contornar um Poka-Yoke para liberar a operação."},
     {title:"Oficina",body:"Realiza retrabalhos, ajustes e correções gerais."}
   ]},
   {id:"anexo-modelos-eixos",stage:"ANEXO",icon:"📑",title:"Modelos de eixos MOE",level:"Consulta",summary:"Folha reservada para relacionar modelos/códigos e aplicações.",lessons:[
@@ -212,7 +212,7 @@ function App() {
 
         <section className="section-block">
           <div className="section-heading"><div><span className="eyebrow">CONTEÚDO ORGANIZADO</span><h2>Módulos de formação</h2></div><span className="module-count">{modules.length} módulos</span></div>
-          <div className="module-grid">{modules.map((m, i) => <React.Fragment key={m.id}>{(!m.stage || m.stage !== modules[i - 1]?.stage) && <div className="training-stage-heading"><span>{m.stage || "CONTEÚDOS COMPLEMENTARES"}</span><strong>{m.stage ? m.title : "Biblioteca e conteúdos de apoio"}</strong><small>{m.stage ? m.summary : "Materiais adicionais para consulta e revisão."}</small></div>}<button className="module-card" onClick={() => openModule(m.id)}><span className="module-icon">{m.icon}</span><span className="module-number">{m.stage || "CONSULTA"}</span><strong>{m.title}</strong><small>{m.summary}</small><span className="module-link">Abrir conteúdo <b>↗</b></span></button></React.Fragment>)}</div>
+          <div className="module-grid">{modules.map((m, i) => <React.Fragment key={m.id}>{(!m.stage || m.stage !== modules[i - 1]?.stage) && <div className="training-stage-heading"><span>{m.stage || "CONTEÚDOS COMPLEMENTARES"}</span><strong>{m.stage ? (m.id === "etapa1-organograma" ? "ORGANOGRAMA DA MONTAGEM" : m.title) : "Biblioteca e conteúdos de apoio"}</strong><small>{m.stage ? m.summary : "Materiais adicionais para consulta e revisão."}</small></div>}<button className="module-card" onClick={() => openModule(m.id)}><span className="module-icon">{m.icon}</span><span className="module-number">{m.stage || "CONSULTA"}</span><strong>{m.title}</strong><small>{m.summary}</small><span className="module-link">Abrir conteúdo <b>↗</b></span></button></React.Fragment>)}</div>
         </section>
       </>}
 
