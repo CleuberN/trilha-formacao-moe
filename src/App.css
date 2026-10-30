@@ -1123,3 +1123,8 @@ main.app .reference-org-heading p {
   background: transparent !important;
   background-image: none !important;
 }
+
+/* Organograma da Etapa 1: impedir sobreposição com título do card */
+.org-stage-feature{margin-top:16px}
+.org-stage-feature .reference-org-heading{min-height:112px}
+.org-stage-feature .reference-org-heading h2{max-width:100%;white-space:normal}
