@@ -1038,3 +1038,10 @@ main.app .org-chart-force-colors .reference-org-note { color:#536780 !important;
 .moe-quiz-trophy{width:68px;height:68px;display:grid;place-items:center;margin:0 auto 18px;border-radius:22px;background:linear-gradient(140deg,rgba(255,42,116,.25),rgba(139,92,246,.3),rgba(41,215,239,.2));border:1px solid rgba(180,190,255,.4);font-size:2rem;color:#a7f3ff;box-shadow:0 0 35px rgba(139,92,246,.2)}
 .moe-quiz-note{margin-top:15px;color:#94a5c7;font-size:.8rem;line-height:1.6}
 @media(max-width:600px){.moe-quiz-page{padding-top:12px}.moe-quiz-actions{align-items:stretch;flex-direction:column}.moe-quiz-actions button{width:100%;min-height:46px}.moe-quiz-card{border-radius:18px}}
+
+/* Organização visual por etapas da apostila CAMIMNS */
+.training-stage-heading{grid-column:1/-1;margin:18px 0 0;padding:12px 15px;border:1px solid rgba(125,160,205,.22);border-radius:13px;background:linear-gradient(100deg,rgba(37,112,128,.18),rgba(101,75,157,.14));color:#eef3ff}
+.training-stage-heading span{display:block;font-size:9px;letter-spacing:1.5px;font-weight:800;color:#95dbe4;margin-bottom:5px}
+.training-stage-heading strong{font:800 17px Manrope,sans-serif;color:#fff}
+.training-stage-heading small{display:block;margin-top:4px;color:#b5c4db;line-height:1.5;font-size:11px}
+@media(max-width:700px){.training-stage-heading{margin-top:12px}.training-stage-heading strong{font-size:15px}}
