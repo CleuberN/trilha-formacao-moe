@@ -1,16 +1,58 @@
-# React + Vite
+# Trilha de Formação MOE
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Biblioteca digital de apoio à formação em Montagem de Eixos (MOE).
 
-Currently, two official plugins are available:
+## Objetivo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Apoiar o aprendizado dos profissionais da MOE por meio de uma trilha organizada por etapas e módulos.
 
-## React Compiler
+## Conteúdo da biblioteca
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Conhecendo a MOE e sua estrutura organizacional
+- Lean Manufacturing e os oito desperdícios
+- Programas, meio ambiente e práticas de organização
+- Preleção, quadros de gestão e indicadores
+- Estrutura da MOE, estações e postos de montagem
+- Componentes do eixo, ferramentas e processo de montagem
+- Qualidade, segurança e inspeção
+- Trilhas de estudo e quiz MOE
 
-## Expanding the Oxlint configuration
+## Tecnologias
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+- React
+- Vite
+- JavaScript
+- CSS
+
+## Executar localmente
+
+Pré-requisitos: Node.js e npm instalados.
+
+```bash
+npm install
+npm run dev
+```
+
+Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+Para visualizar a versão gerada:
+
+```bash
+npm run preview
+```
+
+## Publicação
+
+O projeto utiliza Vite e pode ser publicado em plataformas como a Vercel.
+
+## Observação técnica
+
+Para executar operações de montagem, consulte sempre os procedimentos, desenhos e especificações técnicas oficiais do modelo e da variante do eixo.
+
+## Repositório
+
+https://github.com/CleuberN/trilha-formacao-moe
